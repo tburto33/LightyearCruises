@@ -1,0 +1,60 @@
+* {
+    box-sizing: border-box;
+}
+
+/* ================================= 
+  HEADER & MAIN NAV
+==================================== */
+
+.main-header {
+    display: flex;
+    flex-direction: column;
+    background:chartreuse;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.name {
+    text-align: center;
+}
+
+/* ================================= 
+  BASE ELEMENT STYLES
+==================================== */
+
+body {
+    background: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: whitesmoke;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    background: purple;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+/* ================================= 
+  BASE LAYOUT STYLES
+==================================== */
+
+.main-nav a {
+    text-align: center;
+    display: block;
+    color: whitesmoke;
+}
+
+/* ================================= 
+  MEDIA QUERIES
+==================================== */
