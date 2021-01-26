@@ -6,12 +6,6 @@
   HEADER & MAIN NAV
 ==================================== */
 
-.main-header {
-    display: flex;
-    flex-direction: column;
-    background:chartreuse;
-}
-
 .main-nav {
     display: flex;
     justify-content: space-between;
@@ -19,8 +13,13 @@
     align-items: center;
 }
 
-.name {
-    text-align: center;
+.header-img {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    height: 50px;
+    width: 100%;
 }
 
 /* ================================= 
@@ -38,7 +37,10 @@ ul {
 }
 
 li {
-    background: purple;
+    background: none;
+    font-weight: bold;
+    font-size: 12px;
+    
 }
 
 a:link {
@@ -53,6 +55,32 @@ a:link {
     text-align: center;
     display: block;
     color: whitesmoke;
+}
+
+/*-----BANNER-----*/
+.banner-text {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: normal;
+    vertical-align: baseline;
+}
+
+.name {
+    text-align: center;
+    color: whitesmoke;
+    font-size: 25px;
+}
+
+.banner-img {
+    height: auto;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto;
+    position: relative;
 }
 
 /* ================================= 
