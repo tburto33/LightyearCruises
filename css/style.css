@@ -8,23 +8,34 @@
 
 .main-nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     align-items: center;
 }
 
-.header-img {
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    position: relative;
-    height: 50px;
-    width: 100%;
+.item {
+    flex: 0 1 auto;
+}
+
+.logo-img {
+    height: 70px;
+    width: auto;
+    position: center;
+}
+
+.main-nav a {
+    text-align: center;
+    display: block;
+    color: whitesmoke;
 }
 
 /* ================================= 
   BASE ELEMENT STYLES
 ==================================== */
+
+header {
+    background-color: darkblue;
+}
 
 body {
     background: black;
@@ -51,11 +62,26 @@ a:link {
   BASE LAYOUT STYLES
 ==================================== */
 
-.main-nav a {
+/* CANCEL/CREDITS/GURANTEE CONTAINER */
+.cancel-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: whitesmoke;
+    color: black;
     text-align: center;
-    display: block;
-    color: whitesmoke;
 }
+
+/* IMAGES */
+.cancel-img,
+.money-img,
+.credit-img {
+    height: 50px;
+    width: auto;
+    position: relative;
+}
+
+
 
 /*-----BANNER-----*/
 .banner-text {
