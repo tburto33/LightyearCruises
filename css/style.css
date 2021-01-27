@@ -6,6 +6,31 @@
   HEADER & MAIN NAV
 ==================================== */
 
+/* HAMBURGER NAV */
+#hamnav {
+    width: 100%;
+    background: #000;
+    position: sticky;
+    top: 0;
+}
+
+#hamnav label, 
+#hamburger {
+    display: none;
+}
+
+#hamitems {
+    display: flex;
+}
+
+#hamitems a {
+    width: 20%;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+}
+
 .main-nav {
     display: flex;
     justify-content: space-evenly;
@@ -146,6 +171,30 @@ a:link {
     .money-item {
         width: 33%;
         height: auto;
+    }
 }
 
+@media screen and (max-width: 768px){
+    #hamnav label {
+        display: inline-block;
+        color: white;
+        background: #a02620;
+        font-style: normal;
+        padding: 10px;
+    }
+
+    #hamitems a {
+        display: block;
+        width: 100%;
+        border-top: 1px solid #333;
+    }
+
+    #hamitems {
+        display: none;
+    }
+
+    #hamnav input:checked ~ #hamitems {
+        display: block;
+    }
 }
+
