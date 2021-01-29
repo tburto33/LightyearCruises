@@ -38,11 +38,6 @@
     align-items: center;
 }
 
-.item,
-.item-end {
-    flex: 0 1 auto;
-}
-
 .logo-img {
     height: 70px;
     width: auto;
@@ -64,7 +59,6 @@ header {
 }
 
 body {
-    background: black;
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: whitesmoke;
 }
@@ -119,6 +113,14 @@ a:link {
 }
 
 /* IMAGES */
+
+.main-body {
+    background-image: url("../photos/stars.png");
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
 .cancel-img,
 .money-img,
 .credit-img {
@@ -156,6 +158,17 @@ a:link {
     position: relative;
 }
 
+.destinations,
+.primary-content,
+.starship {
+    background: black;
+}
+
+.main-footer {
+    font-size: 10px;
+    text-align: center;
+}
+
 /* ================================= 
   MEDIA QUERIES
 ==================================== */
@@ -172,13 +185,17 @@ a:link {
         width: 33%;
         height: auto;
     }
+
+    body {
+        margin: 0 25%;
+    }
 }
 
 @media screen and (max-width: 768px){
     #hamnav label {
         display: inline-block;
         color: white;
-        background: #a02620;
+        background: #726f6f;
         font-style: normal;
         padding: 10px;
     }
@@ -196,5 +213,6 @@ a:link {
     #hamnav input:checked ~ #hamitems {
         display: block;
     }
+    
 }
 
