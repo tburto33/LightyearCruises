@@ -31,25 +31,6 @@
     text-align: center;
 }
 
-.main-nav {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    align-items: center;
-}
-
-.logo-img {
-    height: 70px;
-    width: auto;
-    position: center;
-}
-
-.main-nav a {
-    text-align: center;
-    display: block;
-    color: whitesmoke;
-}
-
 /* ================================= 
   BASE ELEMENT STYLES
 ==================================== */
@@ -86,14 +67,19 @@ a:link {
   BASE LAYOUT STYLES
 ==================================== */
 
+#body-wrapper {
+    margin: 0 auto;
+    width: 800px;
+}
+
 .primary-content,
 .cancel-container,
-.destinations,
+.dest-container,
 .starship {
     border-top: 5px solid darkblue;
 }
 
-/* CANCEL/CREDITS/GURANTEE CONTAINER */
+/* CANCEL/CREDITS/FINANCE CONTAINER */
 .cancel-container {
     display: flex;
     flex-wrap: wrap;
@@ -110,6 +96,25 @@ a:link {
     align-self: center;
     padding: 5px;
     text-align: center;
+}
+
+/* DESTINATIONS CONTAINER */
+
+.dest-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.mars,
+.jupiter,
+.saturn {
+    /* flex-grow: 1; */
+    height: 100%;
+    width: 33.33%;  
 }
 
 /* IMAGES */
@@ -132,16 +137,13 @@ a:link {
     margin-right: auto;
 }
 
+/* .mars-img,
+.jupiter-img,
+.saturn-img {
+    width: ;
+} */
+
 /*-----BANNER-----*/
-.banner-text {
-    position: absolute;
-    top: 50%;
-    right: 50%;
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: normal;
-    vertical-align: baseline;
-}
 
 .name {
     text-align: center;
@@ -158,7 +160,7 @@ a:link {
     position: relative;
 }
 
-.destinations,
+.dest-container,
 .primary-content,
 .starship {
     background: black;
@@ -174,9 +176,9 @@ a:link {
 ==================================== */
 
 @media screen and (min-width: 768px){
-    .cancel-container{
+    .cancel-container,
+    .dest-container {
         flex-direction: row;
-        justify-content: center;
     }
 
     .cancel-item,
@@ -186,9 +188,9 @@ a:link {
         height: auto;
     }
 
-    body {
+    /* body {
         margin: 0 25%;
-    }
+    } */
 }
 
 @media screen and (max-width: 768px){
