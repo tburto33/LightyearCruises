@@ -67,17 +67,20 @@ a:link {
   BASE LAYOUT STYLES
 ==================================== */
 
-/* #body-wrapper {
-    margin: 0 auto;
-    width: 800px;
-} */
-
-.primary-content,
-.cancel-container,
-.dest-container,
-.starship {
-    border-top: 5px solid darkblue;
+.primary-content {
+    border-top: 5px solid silver;
 }
+
+.starship,
+.dest-container,
+.cancel-container {
+    border-bottom: 5px solid silver;
+}
+
+/* .cancel-container {
+    border-top: 5px solid silver;
+    border-bottom: 5px solid silver;
+} */
 
 /* CANCEL/CREDITS/FINANCE CONTAINER */
 .cancel-container {
@@ -107,12 +110,12 @@ a:link {
     width: 100%;
     justify-content: center;
     align-items: center;
+    border-bottom: 
 }
 
 .mars,
 .jupiter,
 .saturn {
-    /* flex-grow: 1; */
     height: 100%;
     width: 33.33%;  
 }
@@ -151,7 +154,8 @@ a:link {
     font-size: 25px;
 }
 
-.banner-img {
+.banner-img,
+.starship-img {
     height: auto;
     width: 100%;
     background-repeat: no-repeat;
@@ -186,6 +190,13 @@ a:link {
     .money-item {
         width: 33%;
         height: auto;
+    }
+
+    .mars,
+    .jupiter,
+    .saturn {
+        height: auto;
+        width: 100%;
     }
 
     #body-wrapper {
