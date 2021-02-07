@@ -72,15 +72,13 @@ a:link {
 }
 
 .starship,
-.dest-container,
-.cancel-container {
+.dest-container {
     border-bottom: 5px solid silver;
 }
 
-/* .cancel-container {
+.dest-container {
     border-top: 5px solid silver;
-    border-bottom: 5px solid silver;
-} */
+}
 
 /* CANCEL/CREDITS/FINANCE CONTAINER */
 .cancel-container {
@@ -109,8 +107,7 @@ a:link {
     margin: 0 auto;
     width: 100%;
     justify-content: center;
-    align-items: center;
-    border-bottom: 
+    align-items: center; 
 }
 
 .mars,
@@ -225,6 +222,14 @@ a:link {
 
     #hamnav input:checked ~ #hamitems {
         display: block;
+    }
+
+    .mars,
+    .jupiter,
+    .saturn {
+        flex-grow: 1;
+        width: 75%;
+        height: auto;
     }
     
 }
