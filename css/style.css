@@ -184,16 +184,12 @@ a:link {
 
     .cancel-item,
     .credit-item,
-    .money-item {
-        width: 33%;
-        height: auto;
-    }
-
+    .money-item,
     .mars,
     .jupiter,
     .saturn {
+        width: 33%;
         height: auto;
-        width: 100%;
     }
 
     #body-wrapper {
@@ -230,8 +226,7 @@ a:link {
         flex-grow: 1;
         width: 75%;
         height: auto;
-    }
-    
+    }  
 }
 
 @media screen and (min-width: 1000px){
