@@ -4,6 +4,33 @@ h2 {
     font-weight: bold;
 }
 
+/* IMAGE STYLES */
+
+.main-banner,
+.cruise-one,
+.cruise-two,
+.cruise-three {
+    position: relative;
+}
+
+.banner-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cruise-one-text,
+.cruise-two-text,
+.cruise-three-text{
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+    text-align: left;
+}
+
+
+/* STYLES */
 
 .footer-copyright {
     text-align: center;
