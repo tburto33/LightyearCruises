@@ -1,0 +1,35 @@
+/* BASE STYLES */
+
+h2 {
+    font-weight: bold;
+}
+
+
+.footer-copyright {
+    text-align: center;
+}
+
+.container {
+    text-align: center;
+    background-color: black;
+    color: whitesmoke;
+}
+
+.main-body {
+    background-image: url("../img/stars.png");
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+.cancel-img,
+.money-img,
+.credit-img {
+    height: 50px;
+    width: auto;
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}

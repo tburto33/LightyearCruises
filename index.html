@@ -2,100 +2,142 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<!-- MAIN CSS -->
+<link rel="stylesheet" href="css/styles.css">
     <title>Lightyear Cruises</title>
-    <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="main-body">
-    <div id="body-wrapper">
-        <!-- MAIN HEADER -->
-        <header>
-            <nav id="hamnav">
-                <!-- <img id="logo" src="photos/spaceship_logo.png"> -->
-                <label for="hamburger">&#9776;</label>
-                <input type="checkbox" id="hamburger">
-                <div id="hamitems">
-                    <a href="#">Destinations</a>
-                    <a href="#">Packages</a>
-                    <a href="#">Starship</a>
-                    <a href="#">FAQ</a>
-                    <a href="#">Contact</a>
-                </div>
-            </nav>
-        </header>
-
-        <!-- BANNER -->
-        <div class="banner">
-            <img class="banner-img" src="photos/spacestation.jpg">
-        </div>
-
-        <!--CONTENT-->
-        <div class="primary-content">
-            <h2>Step Aboard</h2>
-            <p>
-            Your cruise starts by boarding a small shuttle that launches you into Earth's orbit
-            to the Lightyear Space Station and Resort. Here you can relax in five-star accomadations,
-            check out our observation station, and more as you prepare to board your starship.
-            </p>
-        </div>
-
-        <h2>Destinations</h2>
-        <div class="dest-container">
-            <div class="mars">
-                <img class="mars-img" src="photos/mars.jpg">
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="color: white;">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="img/spaceship_logo.png" alt="logo" style="width:80px;">
+                </a>
             </div>
-            <div class="jupiter">
-                <img class="jupiter-img" src="photos/jupiter.jpg">
-            </div>
-            <div class="saturn">
-                <img class="saturn-img" src="photos/saturn.jpg">
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Destinations</a></li>
+                    <li><a href="#">Packages</a></li>
+                    <li><a href="#">Starship</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div> 
+        </div>
+    </nav>
+
+    <div class="container">   
+        <div class="row">
+            <div class="col-xs">
+                <img class="img-responsive" src="img/spacestation.jpg" alt="spacestation">
             </div>
         </div>
-
-        <h2>Your Vessel</h2>
-        <div class="ship-banner">
-            <img class="starship-img" src="photos/orca_elite_dangerous.webp">
-        </div>
-
-        <div class= "starship">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                sed do eiusmod tempor incididunt ut labore et dolore magna 
-                aliqua. Sodales ut eu sem integer vitae justo. 
-                Arcu felis bibendum ut tristique et. Ullamcorper eget nulla 
-                facilisi etiam dignissim diam quis enim. Fames ac turpis egestas
-                maecenas pharetra convallis. In est ante in nibh mauris cursus mattis molestie.
-            </p>
-        </div>
-
-        <div class="cancel-container">
-            <div class="cancel-item">
-                <img class="cancel-img" src="photos/cancelled.png">
-                <h3>Free Cancellations</h3>
-                <p>Cancel anytime within 48 hours of flight date and you will receive
-                    a flight credit towards another trip. Credit good for up to 12 months. 
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs">
+                <h2>Step Aboard</h2>
+                <p>
+                    Your cruise starts by boarding a small shuttle that launches you into Earth's orbit
+                    to the Lightyear Space Station and Resort. Here you can relax in five-star accomadations,
+                    check out our observation station, and more as you prepare to board your starship.
                 </p>
             </div>
-            <div class="credit-item">
-                <img class="credit-img" src="photos/rocket_logo.png">
+        </div>
+    </div>
+
+    <!-- **DESTINATIONS CONTAINER** -->
+    <div class="container">
+        <div class= "row">
+            <div>
+                <h2>Destinations</h2>
+            </div>
+            <div class="col-sm-4">
+                <img class="img-responsive" src="img/mars.jpg" alt="mars">
+            </div>
+            <div class="col-sm-4">
+                <img class= "img-responsive" src="img/jupiter.jpg" alt="jupiter">
+            </div>
+            <div class="col-sm-4">
+                <img class="img-responsive" src="img/saturn.jpg" alt="saturn">
+            </div>
+        </div>
+    </div>
+
+    <!-- **VESSEL CONTAINER** -->
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <h2>Your Vessel</h2>
+                <img class="img-responsive" src="img/orca_elite_dangerous.webp" alt="spaceship">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna 
+                    aliqua. Sodales ut eu sem integer vitae justo. 
+                    Arcu felis bibendum ut tristique et. Ullamcorper eget nulla 
+                    facilisi etiam dignissim diam quis enim. Fames ac turpis egestas
+                    maecenas pharetra convallis. In est ante in nibh mauris cursus mattis molestie.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- **CANCELLATION CONTAINER** -->
+    <div class="container" style="background-color: white; color: black;">
+        <div class="row">
+            <div class="col-sm-4">
+                <img class= "cancel-img" src="img/cancelled.png" alt="cancel stamp">
+                <h3>Free Cancellations</h3>
+                <p>
+                    Cancel anytime within 48 hours of flight date and you will receive
+                    a flight credit towards another trip.
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <img class= "credit-img" src="img/rocket_logo.png" alt="rocket">
                 <h3>Earn Flight Points</h3>
-                <p>Every trip and purhase on board the Starship earns you flight points.
+                <p>
+                    Every trip and purhase on board the Starship earns you flight points.
                     Redeem them for free on-board items or towards future trips.
                 </p>
             </div>
-            <div class="money-item">
-                <img class="money-img" src="photos/money.jpg">
+            <div class="col-sm-4">
+                <img class="money-img" src="img/money.jpg" alt="money pile">
                 <h3>Financing Available</h3>
-                <p>We at Lightyear Liners feel like these amazing cruises should be available
+                <p>
+                    We at Lightyear Liners feel like these amazing cruises should be available
                     for all. For that purpose we offer various easily affordable, low interest financing
                     options.
                 </p>
             </div>
         </div>
+    </div>
 
-        <footer class="main-footer">
-            <p>&copy; 2077 Lightyear Liners Intergalactic</p>
-        </footer>
+    <button type="button" class="btn btn-default">Book Now</button>
+
+    <!-- **FOOTER** -->
+    <div class="container">
+        <div class="row">
+            <div class="col-xs">
+                <p class="footer-copyright">&copy; 2077 Lightyear Liners Intergalactic</p>
+            </div>
+        </div>
     </div>
 </body>
 </html>
