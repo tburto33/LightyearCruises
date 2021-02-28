@@ -15,19 +15,7 @@
     <title>Book Cruise</title>
 </head>
 <body>
-    <!-- <form class="form-inline">
-        <div class="form-group">
-            <label for="firstName">First Name:</label>
-            <input type="text" class="from-control" id="firstName">
-        </div>
-        <div class="form-group">
-            <label for="lastName">Last Name:</label>
-            <input type="text" class="from-control" id="lastName">
-        </div>
-    </form> -->
-
-
-    <form id="booking-form" onsubmit="return getInfo()">
+    <form id="booking-form">
         <label for="firstName">First Name:</label><br>
         <input type="text" id="firstName" name="firstName"><br>
 
@@ -57,7 +45,8 @@
 
         <h3>Total:</h3>
         <br>
-        <input type="submit" value="Submit" onsubmit="getInfo()">   
+        <button id="btn">Submit</button>
+        <!-- <input type="submit" value="Submit" id="submit-btn">    -->
         <input type="reset">
     </form>
 
