@@ -16,21 +16,23 @@ const getContactInfo = (ev)=>{
         console.log(`Hello, ${info.firstName} ${info.lastName}. Your email is ${info.email}.`);
     }    
 }
-document.addEventListener('DOMContentLoaded', ()=>{
-    document.getElementById('btn').addEventListener('click', getContactInfo);
-})
 
-let totalCruiseSum = 0;
-var extrasSpaceWalk = document.getElementById("spacewalk");
-var extrasZeroGravity = document.getElementById("zero-gravity");
-var extrasShuttle = document.getElementById("shuttle");
-var extrasVIP = document.getElementById("vip");
-
-const cruiseExtras = ()=>{
-    let extrasPricing = {
-        spacewalk: 500,
-        zeroGravity: 100,
-        shuttle: 1000,
-        vip: 2000
+const getExtrasTotal = (ev)=>{
+    ev.preventDefault();
+    let extras = {
+        spacewalk: document.getElementById("spacewalk").value,
+        gravityRoom: document.getElementById("zero-gravity").value,
+        shuttle: document.getElementById("shuttle").value,
+        vip: document.getElementById("vip").value
     }
+    var extrasTotal = 0;
+    for(i=0; i<extras.length; i++){
+        if(extras[i].checked){
+            extrasTotal += parseInt(extras[i].value);
+        }
+    }
+    document.getElementById("total").value= "$" + extrasTotal.toFixed(2);
 }
+document.addEventListener('DOMContentLoaded', ()=>{
+    document.getElementById('btn').addEventListener('click', getContactInfo, getExtrasTotal);
+})
