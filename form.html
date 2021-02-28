@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Book Cruise</title>
+</head>
+<body>
+    <!-- <form class="form-inline">
+        <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input type="text" class="from-control" id="firstName">
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input type="text" class="from-control" id="lastName">
+        </div>
+    </form> -->
+
+
+    <form id="booking-form" onsubmit="return getInfo()">
+        <label for="firstName">First Name:</label><br>
+        <input type="text" id="firstName" name="firstName"><br>
+
+        <label for="lastName">Last Name:</label><br>
+        <input type="text" id="lastName" name="lastName"><br>
+
+        <label for="email">Email:</label><br>
+        <input type="text" name="email" id="email"><br>
+
+        <h2>Destination:</h2>
+        <input type="radio" id="mars" name="planet" value="mars">
+        <label for="destination">Mars</label><br>
+        <input type="radio" id="jupiter" name="planet" value="jupter">
+        <label for="destination">Jupiter</label><br>
+        <input type="radio" id="saturn" name="planet" value="saturn">
+        <label for="destination">Saturn</label><br>
+
+        <h2>Extras:</h2>
+        <input type="checkbox" id="spacewalk" name="spacewalk">
+        <label for="spacewalk">Spacewalk</label><br>
+        <input type="checkbox" id="zero-gravity" name="zero-gravity">
+        <label for="zero-gravity">Zero Gravity Room</label><br>
+        <input type="checkbox" id="shuttle" name="shuttle">
+        <label for="shuttle">Private Shuttle Tour</label><br>
+        <input type="checkbox" id="vip" name="vip">
+        <label for="vip">VIP Experience</label><br>
+
+        <h3>Total:</h3>
+        <br>
+        <input type="submit" value="Submit" onsubmit="getInfo()">   
+        <input type="reset">
+    </form>
+
+<script src="js/getInfo.js"></script>
+</body>
+</html>
