@@ -17,21 +17,20 @@ const getContactInfo = (ev)=>{
     }    
 }
 
-const getExtrasTotal = (ev)=>{
-    ev.preventDefault();
+
+const getExtrasTotal = ()=>{
     let extras = {
         spacewalk: document.getElementById("spacewalk").value,
         gravityRoom: document.getElementById("zero-gravity").value,
         shuttle: document.getElementById("shuttle").value,
         vip: document.getElementById("vip").value
     }
-    var extrasTotal = 0;
     for(i=0; i<extras.length; i++){
         if(extras[i].checked){
             extrasTotal += parseInt(extras[i].value);
         }
     }
-    document.getElementById("total").value= "$" + extrasTotal.toFixed(2);
+    document.getElementById("total").value= "$" + extrasTotal;
 }
 document.addEventListener('DOMContentLoaded', ()=>{
     document.getElementById('btn').addEventListener('click', getContactInfo, getExtrasTotal);

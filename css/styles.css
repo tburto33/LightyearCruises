@@ -6,6 +6,15 @@ h2 {
 
 /* IMAGE STYLES */
 
+.main-banner {
+    padding-top: 20px;
+}
+
+.spaceship {
+    height: auto;
+    width: 1200px;
+}
+
 .main-banner,
 .cruise-one,
 .cruise-two,
@@ -64,4 +73,22 @@ h2 {
     text-align: center;
     background-color: black;
     color: whitesmoke;
+}
+
+/** MEDIA QUERIES **/
+@media only screen and (min-width: 780px){
+    #dest-carousel{
+        width: 750px;
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: 780px){
+    .navbar-brand {
+        display: none;
+    }
+
+    .cancel-container {
+        margin: 0 10%
+    }
 }

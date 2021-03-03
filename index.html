@@ -18,7 +18,7 @@
     <title>Lightyear Cruises</title>
 </head>
 <body class="main-body">
-    <nav class="navbar navbar-inverse navbar-fixed-top" style="color: white;">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -26,12 +26,11 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">
-                    <img src="img/spaceship_logo.png" alt="logo" style="width:80px;">
-                </a>
+                <img class="navbar-left" src="img/spaceship_logo.png" alt="logo" style="width:80px;">
+                <a class="navbar-brand" href="#" style="color:white;">Lightyear Cruises</a>
             </div>
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav navbar-right">
                     <li><a href="#">Destinations</a></li>
                     <li><a href="#">Packages</a></li>
                     <li><a href="#">Starship</a></li>
@@ -66,7 +65,7 @@
         </div>
     </div>
 
-    <!-- **DESTINATIONS CONTAINER** -->
+    <!-- **DESTINATIONS CAROUSEL** -->
     <div class="container">
         <h2>Destinations</h2>
         <div id="dest-carousel" class="carousel slide" data-ride="carousel">
@@ -119,52 +118,12 @@
         </div>    
     </div>
 
-    <!-- <div class="container">
-        <div class= "row">
-            <div>
-                <h2>Destinations</h2>
-            </div>
-            <div class="col-sm-4">
-                <img class="img-responsive cruise-one" src="img/mars.jpg" alt="mars">
-                <div class= "cruise-one-text">
-                    <h6>1 MONTH</h6>
-                    <h4>RED SANDS OF MARS</h4>
-                    <h5>STARTING:</h5>
-                    <h6>$400/DAY</h6>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <img class= "img-responsive cruise-two" src="img/jupiter.jpg" alt="jupiter">
-                <div class="cruise-two-text">
-                    <h6>1 MONTH</h6>
-                    <h4>EYE OF JUPITER</h4>
-                    <h5>STARTING:</h5>
-                    <h6>$600/DAY</h6>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <img class="img-responsive cruise-three" src="img/saturn.jpg" alt="saturn">
-                <div class="cruise-three-text">
-                    <h6>3 MONTH</h6>
-                    <h4>RINGS OF SATURN</h4>
-                    <h5>STARTING:</h5>
-                    <h6>$800/DAY</h6>
-                </div>
-            </div>
-            <div class="row">
-                <div class= col-sm-12>
-                    <button type="button" class="btn btn-default" id="chat-btn"><a href="form.html">Book Now</a></button>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
     <!-- **VESSEL CONTAINER** -->
     <div class="container">
         <div class="row">
             <div class="col-sm">
                 <h2>Your Vessel</h2>
-                <img class="img-responsive" src="img/orca_elite_dangerous.webp" alt="spaceship">
+                <img class="img-responsive spaceship" src="img/orca_elite_dangerous.webp" alt="spaceship">
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                     sed do eiusmod tempor incididunt ut labore et dolore magna 
@@ -178,7 +137,7 @@
     </div>
 
     <!-- **CANCELLATION CONTAINER** -->
-    <div class="container" style="background-color: white; color: black;">
+    <div class="container cancel-container" style="background-color: white; color: black;">
         <div class="row">
             <div class="col-sm-4">
                 <img class= "cancel-img" src="img/cancelled.png" alt="cancel stamp">
