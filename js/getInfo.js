@@ -1,7 +1,7 @@
+//gets contact information
 let contactInfo = [];
-
-const getContactInfo = (ev)=>{
-    ev.preventDefault();
+const getContactInfo = (e)=>{
+    e.preventDefault();
     let info = {
         firstName: document.getElementById("firstName").value,
         lastName: document.getElementById("lastName").value,
@@ -17,21 +17,38 @@ const getContactInfo = (ev)=>{
     }    
 }
 
-
-const getExtrasTotal = ()=>{
+//verifies check boxes and adds values for extras
+let selectedExtras = [];
+const getExtrasTotal = (e)=>{
+    e.preventDefault();
     let extras = {
         spacewalk: document.getElementById("spacewalk").value,
         gravityRoom: document.getElementById("zero-gravity").value,
         shuttle: document.getElementById("shuttle").value,
         vip: document.getElementById("vip").value
     }
-    for(i=0; i<extras.length; i++){
+    for(var i=0; i<extras.length; i++){
         if(extras[i].checked){
-            extrasTotal += parseInt(extras[i].value);
+            selectedExtras.push(parseInt(extras[i].value));
         }
     }
-    document.getElementById("total").value= "$" + extrasTotal;
+    console.log(selectedExtras.reduce((a, b) => a + b, 0));   
 }
+
+// verifies form fields are properly filled.
+const verifyFormFilled = () =>{
+    var inputs = document.getElementsByTagName('input');
+    for(i=0; i<inputs.length; i++) {
+        if(inputs[i].hasAttribute("required")){
+            if(inputs[i].value = ""){
+                alert("Please fill required form information.")
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
 document.addEventListener('DOMContentLoaded', ()=>{
-    document.getElementById('btn').addEventListener('click', getContactInfo, getExtrasTotal);
+    document.getElementById('btn').addEventListener('click', verifyFormFilled, getContactInfo);
 })

@@ -17,13 +17,13 @@
 <body>
     <form id="booking-form">
         <label for="firstName">First Name:</label><br>
-        <input type="text" id="firstName" name="firstName"><br>
+        <input type="text" id="firstName" name="firstName" required><br>
 
         <label for="lastName">Last Name:</label><br>
-        <input type="text" id="lastName" name="lastName"><br>
+        <input type="text" id="lastName" name="lastName" required><br>
 
         <label for="email">Email:</label><br>
-        <input type="text" name="email" id="email"><br>
+        <input type="text" name="email" id="email" required><br>
 
         <h2>Destination:</h2>
         <input type="radio" id="mars" name="planet" value="mars">
@@ -34,19 +34,37 @@
         <label for="destination">Saturn</label><br>
 
         <h2>Extras:</h2>
-        <input type="checkbox" id="spacewalk" name="spacewalk">
+        <input type="checkbox" id="spacewalk" name="spacewalk" value="500">
         <label for="spacewalk">Spacewalk</label><br>
-        <input type="checkbox" id="zero-gravity" name="zero-gravity">
+        <input type="checkbox" id="zero-gravity" name="zero-gravity" value="100">
         <label for="zero-gravity">Zero Gravity Room</label><br>
-        <input type="checkbox" id="shuttle" name="shuttle">
+        <input type="checkbox" id="shuttle" name="shuttle" value="1000">
         <label for="shuttle">Private Shuttle Tour</label><br>
-        <input type="checkbox" id="vip" name="vip">
+        <input type="checkbox" id="vip" name="vip" value="2000">
         <label for="vip">VIP Experience</label><br>
 
         <h3>Total:</h3>
         <br>
         <input type="text" value= "$0.00" readonly="readonly" id="total">
         <br>
+
+        <h2>Payment Information:</h2>
+        <label for="ccNumber">Credit Card Number:</label><br>
+        <input type="text" name="ccNumber" id="ccNumber" required><br>
+        <label for="ccExp">Expiration</label><br>
+        <input type="text" name="ccExp" id="ccExp" required><br>
+        <label for="ccCode">Secrity Code</label><br>
+        <input type="text" name="ccCode" id="ccCode" required><br>
+
+        <label for="address">Billing Address</label><br>
+        <input type="text" name="address" id="address" required><br>
+        <label for="zipCode">Zipcode</label><br>
+        <input type="text" name="zipCode" id="zipCode" required><br>
+        <label for="city">City</label><br>
+        <input type="text" name="city" id="city" required><br>
+        <label for="state">State</label><br>
+        <input type="text" name="state" id="state" required><br><br>
+        
         <button id="btn">Submit</button>
         <input type="reset">
     </form>
