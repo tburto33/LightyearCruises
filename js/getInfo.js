@@ -8,47 +8,47 @@ const getContactInfo = (e)=>{
         email: document.getElementById("email").value
     }
     contactInfo.push(info);
-    document.forms[0].reset(); //resets form
 
     if(info.firstName == "" || info.lastName == "" || info.email == ""){
-        console.log("Missing information");
+        alert("Missing information");
     }else {
         console.log(`Hello, ${info.firstName} ${info.lastName}. Your email is ${info.email}.`);
     }    
 }
 
-//verifies check boxes and adds values for extras
-let selectedExtras = [];
-const getExtrasTotal = (e)=>{
+//formats numbers to US Currency
+var formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD'
+});
+
+//checks for destination & extras returns total of values
+const getCruiseCost = (e) => {
     e.preventDefault();
-    let extras = {
-        spacewalk: document.getElementById("spacewalk").value,
-        gravityRoom: document.getElementById("zero-gravity").value,
-        shuttle: document.getElementById("shuttle").value,
-        vip: document.getElementById("vip").value
+    var checkedVal = []; //temp array for stored values
+
+    //validates destination & pushes value of checked to array
+    var dest = document.querySelector('input[name=planet]:checked');
+    if(dest){
+        checkedVal.push(parseInt(dest.value));
+    }else{
+        alert("Please select destination!");
     }
-    for(var i=0; i<extras.length; i++){
+
+    //loops through extras for checked values
+    var extras = document.getElementsByName('extra');
+    for(i=0; extras[i]; i++){
         if(extras[i].checked){
-            selectedExtras.push(parseInt(extras[i].value));
+            checkedVal.push(parseInt(extras[i].value))
         }
     }
-    console.log(selectedExtras.reduce((a, b) => a + b, 0));   
+
+    //adds values from array and returns total to form.html
+    document.getElementById('tripTotal').innerHTML = `${formatter.format(checkedVal.reduce((a,b) => a + b, 0))}`;
 }
 
-// verifies form fields are properly filled.
-const verifyFormFilled = () =>{
-    var inputs = document.getElementsByTagName('input');
-    for(i=0; i<inputs.length; i++) {
-        if(inputs[i].hasAttribute("required")){
-            if(inputs[i].value = ""){
-                alert("Please fill required form information.")
-                return false;
-            }
-        }
-    }
-    return true;
-}
-
+//listener for submit btn
 document.addEventListener('DOMContentLoaded', ()=>{
-    document.getElementById('btn').addEventListener('click', verifyFormFilled, getContactInfo);
+    document.getElementById('btn').addEventListener('click', getCruiseCost);
+    // document.getElementById('btn').addEventListener('click', getExtras);
 })

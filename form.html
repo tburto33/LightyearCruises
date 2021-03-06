@@ -15,58 +15,62 @@
     <title>Book Cruise</title>
 </head>
 <body>
-    <form id="booking-form">
+    <form name ="booking-form">
         <label for="firstName">First Name:</label><br>
-        <input type="text" id="firstName" name="firstName" required><br>
+        <input type="text" id="firstName" name="firstName"><br>
 
         <label for="lastName">Last Name:</label><br>
-        <input type="text" id="lastName" name="lastName" required><br>
+        <input type="text" id="lastName" name="lastName"><br>
 
         <label for="email">Email:</label><br>
-        <input type="text" name="email" id="email" required><br>
+        <input type="text" name="email" id="email"><br>
 
         <h2>Destination:</h2>
-        <input type="radio" id="mars" name="planet" value="mars">
+        <input type="radio" id="mars" name="planet" value="12000">
         <label for="destination">Mars</label><br>
-        <input type="radio" id="jupiter" name="planet" value="jupter">
+        <input type="radio" id="jupiter" name="planet" value="36000">
         <label for="destination">Jupiter</label><br>
-        <input type="radio" id="saturn" name="planet" value="saturn">
+        <input type="radio" id="saturn" name="planet" value="72000">
         <label for="destination">Saturn</label><br>
 
         <h2>Extras:</h2>
-        <input type="checkbox" id="spacewalk" name="spacewalk" value="500">
+        <input type="checkbox" id="spacewalk" name="extra" value="500">
         <label for="spacewalk">Spacewalk</label><br>
-        <input type="checkbox" id="zero-gravity" name="zero-gravity" value="100">
+        <input type="checkbox" id="zero-gravity" name="extra" value="100">
         <label for="zero-gravity">Zero Gravity Room</label><br>
-        <input type="checkbox" id="shuttle" name="shuttle" value="1000">
+        <input type="checkbox" id="shuttle" name="extra" value="1000">
         <label for="shuttle">Private Shuttle Tour</label><br>
-        <input type="checkbox" id="vip" name="vip" value="2000">
+        <input type="checkbox" id="vip" name="extra" value="2000">
         <label for="vip">VIP Experience</label><br>
 
         <h3>Total:</h3>
-        <br>
-        <input type="text" value= "$0.00" readonly="readonly" id="total">
+        <h2 id=tripTotal></h2>
         <br>
 
-        <h2>Payment Information:</h2>
+
+        <!-- <h2>Payment Information:</h2>
         <label for="ccNumber">Credit Card Number:</label><br>
-        <input type="text" name="ccNumber" id="ccNumber" required><br>
+        <input type="text" name="ccNumber" id="ccNumber"><br>
         <label for="ccExp">Expiration</label><br>
-        <input type="text" name="ccExp" id="ccExp" required><br>
+        <input type="text" name="ccExp" id="ccExp"><br>
         <label for="ccCode">Secrity Code</label><br>
-        <input type="text" name="ccCode" id="ccCode" required><br>
+        <input type="text" name="ccCode" id="ccCode"><br> -->
 
-        <label for="address">Billing Address</label><br>
-        <input type="text" name="address" id="address" required><br>
+        <!-- <label for="address">Billing Address</label><br>
+        <input type="text" name="address" id="address"><br>
         <label for="zipCode">Zipcode</label><br>
-        <input type="text" name="zipCode" id="zipCode" required><br>
+        <input type="text" name="zipCode" id="zipCode"><br>
         <label for="city">City</label><br>
-        <input type="text" name="city" id="city" required><br>
+        <input type="text" name="city" id="city"><br>
         <label for="state">State</label><br>
-        <input type="text" name="state" id="state" required><br><br>
+        <input type="text" name="state" id="state"><br><br> -->
         
         <button id="btn">Submit</button>
         <input type="reset">
+    
+        <h3></h3>
+    
+    
     </form>
 
 <script src="js/getInfo.js"></script>
