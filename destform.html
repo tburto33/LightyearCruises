@@ -15,17 +15,33 @@
     <title>Book Cruise</title>
 </head>
 <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img class="navbar-left" src="img/spaceship_logo.png" alt="logo" style="width:80px;">
+                <a class="navbar-brand" href="index.html" style="color:white;">Lightyear Cruises</a>
+            </div>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Destinations</a></li>
+                    <li><a href="#">Packages</a></li>
+                    <li><a href="#">Starship</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div> 
+        </div>
+    </nav>
+    <br>
+    <br>
     <form name ="booking-form">
-        <label for="firstName">First Name:</label><br>
-        <input type="text" id="firstName" name="firstName"><br>
-
-        <label for="lastName">Last Name:</label><br>
-        <input type="text" id="lastName" name="lastName"><br>
-
-        <label for="email">Email:</label><br>
-        <input type="text" name="email" id="email"><br>
-
-        <h2>Destination:</h2>
+        <h2>Destination:</h2><br>
         <input type="radio" id="mars" name="planet" value="12000">
         <label for="destination">Mars</label><br>
         <input type="radio" id="jupiter" name="planet" value="36000">
@@ -33,7 +49,7 @@
         <input type="radio" id="saturn" name="planet" value="72000">
         <label for="destination">Saturn</label><br>
 
-        <h2>Extras:</h2>
+        <h2>Extras:</h2><br>
         <input type="checkbox" id="spacewalk" name="extra" value="500">
         <label for="spacewalk">Spacewalk</label><br>
         <input type="checkbox" id="zero-gravity" name="extra" value="100">
@@ -43,34 +59,13 @@
         <input type="checkbox" id="vip" name="extra" value="2000">
         <label for="vip">VIP Experience</label><br>
 
-        <h3>Total:</h3>
+        <h3>Estimated Total:</h3>
         <h2 id=tripTotal></h2>
         <br>
-
-
-        <!-- <h2>Payment Information:</h2>
-        <label for="ccNumber">Credit Card Number:</label><br>
-        <input type="text" name="ccNumber" id="ccNumber"><br>
-        <label for="ccExp">Expiration</label><br>
-        <input type="text" name="ccExp" id="ccExp"><br>
-        <label for="ccCode">Secrity Code</label><br>
-        <input type="text" name="ccCode" id="ccCode"><br> -->
-
-        <!-- <label for="address">Billing Address</label><br>
-        <input type="text" name="address" id="address"><br>
-        <label for="zipCode">Zipcode</label><br>
-        <input type="text" name="zipCode" id="zipCode"><br>
-        <label for="city">City</label><br>
-        <input type="text" name="city" id="city"><br>
-        <label for="state">State</label><br>
-        <input type="text" name="state" id="state"><br><br> -->
         
         <button id="btn">Submit</button>
         <input type="reset">
-    
-        <h3></h3>
-    
-    
+        <br>
     </form>
 
 <script src="js/getInfo.js"></script>
