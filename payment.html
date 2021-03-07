@@ -12,9 +12,13 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="css/form.css">
+
     <title>Payment</title>
 </head>
-<body>
+<body class="main-body">
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -75,7 +79,7 @@
     <form class="form-inline">
         <div class="form-group">
             <label for="state">State</label><br>
-            <select name="state">
+            <select name="state" class="state-list">
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
                 <option value="AZ">Arizona</option>
@@ -150,5 +154,6 @@
     </form>
 
     <button id="btn">Submit</button>
+    <script src="js/billing.js"></script>
 </body>
 </html>

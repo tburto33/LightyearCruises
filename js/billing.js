@@ -14,25 +14,23 @@ const getContactInfo = (e)=>{
         ccExp: document.getElementById("ccExp").value,
         ccCode: document.getElementById("ccCode").value
     }
-    for(var i=0; i<info.length; i++){
-        if(info[i].length == ""){
-            alert("Missing Information!");
-        }else{
-            contactInfo.push(info);
+    contactInfo.push(info);
+    for(var i=0; i<contactInfo.length; i++){
+        if(info.phone.length != 7){
+            alert("Invalid phone number");
+        }
+        if(info.ccNumber.length != 16 || info.ccNumber.value != 0001234567890000){
+            alert("Invalid CC number");
+        }
+        if(info.ccExp.length != 4 || info.ccExp.value != 1234){
+            alert("Invalid CC expiration");
+        }
+        if(info.ccCode.length != 3 || info.ccCode.value != 000){
+            alert("Invalid CC security code");
         }
     }
-
-    alert(contactInfo);
-
-    // if(info.firstName == "" || info.lastName == "" || info.email == ""){
-    //     alert("Missing information");
-    // }else {
-    //     console.log(`Hello, ${info.firstName} ${info.lastName}. Your email is ${info.email}.`);
-    // }    
 }
 
-// for(var i=0; i<info.length; i++){
-//     if(info[i].length == ""){
-//         alert("Missing Information!");
-//     }
-// }
+document.addEventListener('DOMContentLoaded', ()=>{
+    document.getElementById('btn').addEventListener('click', getContactInfo);
+})

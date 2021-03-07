@@ -62,6 +62,11 @@ h2 {
     background-size: cover;
 }
 
+.cancel-container,
+.vessel {
+    margin-top: 20px;
+}
+
 
 /* STYLES */
 
@@ -89,6 +94,6 @@ h2 {
     }
 
     .cancel-container {
-        margin: 0 10%
+        margin: 20px 10%
     }
 }

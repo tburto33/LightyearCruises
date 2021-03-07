@@ -1,0 +1,17 @@
+#btn {
+    background-color: silver;
+    color: black;
+    font-weight: bold;
+}
+
+.main-body {
+    background-image: url("../img/stars.png");
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    color: whitesmoke;
+}
+
+.state-list {
+    color: black;
+}
