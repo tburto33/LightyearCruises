@@ -1,21 +1,3 @@
-//gets contact information
-let contactInfo = [];
-const getContactInfo = (e)=>{
-    e.preventDefault();
-    let info = {
-        firstName: document.getElementById("firstName").value,
-        lastName: document.getElementById("lastName").value,
-        email: document.getElementById("email").value
-    }
-    contactInfo.push(info);
-
-    if(info.firstName == "" || info.lastName == "" || info.email == ""){
-        alert("Missing information");
-    }else {
-        console.log(`Hello, ${info.firstName} ${info.lastName}. Your email is ${info.email}.`);
-    }    
-}
-
 //formats numbers to US Currency
 var formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -28,11 +10,11 @@ const getCruiseCost = (e) => {
     var checkedVal = []; //temp array for stored values
 
     //validates destination & pushes value of checked to array
-    var dest = document.querySelector('input[name=planet]:checked');
+    let dest = document.querySelector('input[name=planet]:checked');
     if(dest){
         checkedVal.push(parseInt(dest.value));
     }else{
-        alert("Please select destination!");
+        alert("Please select a destination!");
     }
 
     //loops through extras for checked values
@@ -43,12 +25,16 @@ const getCruiseCost = (e) => {
         }
     }
 
+    let tripTotal = formatter.format(checkedVal.reduce((a,b) => a + b, 0));
+
     //adds values from array and returns total to form.html
-    document.getElementById('tripTotal').innerHTML = `${formatter.format(checkedVal.reduce((a,b) => a + b, 0))}`;
+    document.getElementById('tripTotal').innerHTML = `${tripTotal}`;
 }
 
 //listener for submit btn
 document.addEventListener('DOMContentLoaded', ()=>{
     document.getElementById('btn').addEventListener('click', getCruiseCost);
-    // document.getElementById('btn').addEventListener('click', getExtras);
 })
+
+
+

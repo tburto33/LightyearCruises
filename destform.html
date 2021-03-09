@@ -44,34 +44,65 @@
     </nav>
     <br>
     <br>
-    <form name ="booking-form">
-        <h2>Destination:</h2><br>
-        <input type="radio" id="mars" name="planet" value="12000">
-        <label for="destination">Mars</label><br>
-        <input type="radio" id="jupiter" name="planet" value="36000">
-        <label for="destination">Jupiter</label><br>
-        <input type="radio" id="saturn" name="planet" value="72000">
-        <label for="destination">Saturn</label><br>
+    <div id="form-style">
+        <form name ="booking-form">
+            <h2>Destination:</h2><br>
+            <input type="radio" id="mars" name="planet" value="12000">
+            <label for="destination">Mars</label><br>
+            <p id="cruiseOne"></p>
 
-        <h2>Extras:</h2><br>
-        <input type="checkbox" id="spacewalk" name="extra" value="500">
-        <label for="spacewalk">Spacewalk</label><br>
-        <input type="checkbox" id="zero-gravity" name="extra" value="100">
-        <label for="zero-gravity">Zero Gravity Room</label><br>
-        <input type="checkbox" id="shuttle" name="extra" value="1000">
-        <label for="shuttle">Private Shuttle Tour</label><br>
-        <input type="checkbox" id="vip" name="extra" value="2000">
-        <label for="vip">VIP Experience</label><br>
+            <input type="radio" id="jupiter" name="planet" value="36000">
+            <label for="destination">Jupiter</label><br>
+            <p id="cruiseTwo"></p>
 
-        <h3>Estimated Total:</h3>
-        <h2 id=tripTotal></h2>
-        <br>
-        
-        <button id="btn">Estimate Cost</button><br>
-        <button id="btn"><a href="payment.html">Continue<Continue</button>
-        <br>
-    </form>
+            <input type="radio" id="saturn" name="planet" value="72000">
+            <label for="destination">Saturn</label><br>
+            <p id="cruiseThree"></p>
+
+            <h2>Extras:</h2><br>
+            <input type="checkbox" id="spacewalk" name="extra" value="500">
+            <label for="spacewalk">Spacewalk</label><br>
+            <p id="extraOne">
+                Grab a spacesuit before stepping out of the ship and into space<br>
+                for one of a kind views and experience.<br> 
+                Price: $500
+            </p>
+
+            <input type="checkbox" id="zero-gravity" name="extra" value="100">
+            <label for="zero-gravity">Zero Gravity Room</label><br>
+            <p id="extraTwo">
+                Drop the kids off at the padded Zero Gravity Room<br>
+                to let them experience weightless fun!<br> 
+                Price: $100
+            </p>
+
+            <input type="checkbox" id="shuttle" name="extra" value="1000">
+            <label for="shuttle">Private Shuttle Tour</label><br>
+            <p id="extraThree">
+                Get away from the crowd and into your own 4 person shuttle.<br>
+                Piloted by our expert guides to see exclusive sites.<br>
+                Price: $1000
+            </p>
+
+            <input type="checkbox" id="vip" name="extra" value="2000">
+            <label for="vip">VIP Experience</label><br>
+            <p id="extraFour">
+                With the VIP Experience you get everything listed above,<br>
+                plus exclusive souvenirs, extended Shuttle Tour, and more!<br>
+                Price: $2000 
+            </p>
+
+            <h3>Estimated Total:</h3>
+            <h2 id=tripTotal></h2>
+            <br>
+            
+            <button id="btn">Est Total</button><br>
+            <button id="btn"><a href="payment.html"></a>Payment</button>
+            <br>
+        </form>
+    </div>
 
 <script src="js/getInfo.js"></script>
+<script src="js/cruiseData.js"></script>
 </body>
 </html>

@@ -14,23 +14,56 @@ const getContactInfo = (e)=>{
         ccExp: document.getElementById("ccExp").value,
         ccCode: document.getElementById("ccCode").value
     }
-    contactInfo.push(info);
-    for(var i=0; i<contactInfo.length; i++){
-        if(info.phone.length != 7){
-            alert("Invalid phone number");
+        contactInfo.push(info);
+        if(info.firstName == "" || info.lastName == ""){
+            alert("First/Last Name Required");
         }
-        if(info.ccNumber.length != 16 || info.ccNumber.value != 0001234567890000){
-            alert("Invalid CC number");
+        if(info.email == ""){
+            alert("Email Required");
         }
-        if(info.ccExp.length != 4 || info.ccExp.value != 1234){
-            alert("Invalid CC expiration");
+        if(info.phone == "" || info.phone.length !== 10){
+            alert("Phone invalid");
         }
-        if(info.ccCode.length != 3 || info.ccCode.value != 000){
-            alert("Invalid CC security code");
+        if(info.address == ""){
+            alert("Address Required");
         }
-    }
-}
+        if(info.city == ""){
+            alert("City Required");
+        }
+        if(info.zipcode == "" || info.zipcode !== "40229"){
+            alert("Zipcode Invalid");
+        }
+        if(info.ccNumber == "" || info.ccNumber !== "1234123412341234"){
+            alert("Credit Card Number Invalid");
+        }
+        if(info.ccExp == "" || info.ccExp !== "0977"){
+            alert("Invalid Credit Card Expiration");
+        }
+        if(info.ccCode == "" || info.ccCode !== "000"){
+            alert("Invalid Credit Card Security Code");
+        }
+        console.log(contactInfo);
+}    
 
 document.addEventListener('DOMContentLoaded', ()=>{
-    document.getElementById('btn').addEventListener('click', getContactInfo);
+    document.getElementById('sub-btn').addEventListener('click', getContactInfo);
 })
+
+
+//gets contact information
+// let contactInfo = [];
+// const getContactInfo = (e)=>{
+//     e.preventDefault();
+//     let info = {
+//         firstName: document.getElementById("firstName").value,
+//         lastName: document.getElementById("lastName").value,
+//         email: document.getElementById("email").value
+//     }
+//     info.push(info);
+
+//     if(info.firstName == "" || info.lastName == "" || info.email == ""){
+//         alert("Missing information");
+//     }else {
+//         console.log(`Hello, ${info.firstName} ${info.lastName}. Your email is ${info.email}.`);
+//     }    
+// }

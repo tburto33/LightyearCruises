@@ -4,6 +4,13 @@
     font-weight: bold;
 }
 
+#form-style {
+    width: 50%;
+    margin: 0 auto;
+    background-color: darkslategrey;
+    padding: 20px 0;
+}
+
 .main-body {
     background-image: url("../img/stars.png");
     height: 100%;
@@ -14,4 +21,13 @@
 
 .state-list {
     color: black;
+}
+
+@media only screen and (max-width: 780px){
+    #form-style {
+        width: 100%;
+    }
+    .navbar-brand {
+        display: none;
+    }
 }
