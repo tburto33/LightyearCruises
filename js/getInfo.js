@@ -7,9 +7,7 @@ var formatter = new Intl.NumberFormat('en-US', {
 //checks for destination & extras returns total of values
 const getCruiseCost = (e) => {
     e.preventDefault();
-    disPayBtn();
     var checkedVal = []; //temp array for stored values
-    var btnDisable = document.getElementById('btn-pay')
 
     //validates destination & pushes value of checked to array
     let dest = document.querySelector('input[name=planet]:checked');
@@ -37,14 +35,20 @@ const getCruiseCost = (e) => {
 
 //listener for Est Total btn on destform.html
 document.addEventListener('DOMContentLoaded', ()=>{
+    const destMars = document.getElementById('mars');
+    const destJupiter = document.getElementById('jupiter');
+    const destSaturn = document.getElementById('saturn');
+
+    destMars.addEventListener('change', enPayBtn);
+    destJupiter.addEventListener('change', enPayBtn);
+    destSaturn.addEventListener('change', enPayBtn);
+    //first: find dest element
+    //second: eventlistener on element on change or click
+    //
     document.getElementById('btn').addEventListener('click', getCruiseCost);
 })
 
-function disPayBtn(){
-    document.getElementById('btn-pay').disabled;
-}
-
 function enPayBtn(){
-    document.getElementById('btn-pay').disabled = false;
+    document.getElementById('btn-pay').style.pointerEvents = "auto";
 }
 

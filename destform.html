@@ -48,15 +48,15 @@
         <form name ="booking-form">
             <h2>Destination:</h2><br>
             <input type="radio" id="mars" name="planet" value="12000">
-            <label for="destination">Mars</label><br>
+            <label for="mars">Mars</label><br>
             <p id="cruiseOne"></p>
 
             <input type="radio" id="jupiter" name="planet" value="36000">
-            <label for="destination">Jupiter</label><br>
+            <label for="jupiter">Jupiter</label><br>
             <p id="cruiseTwo"></p>
 
             <input type="radio" id="saturn" name="planet" value="72000">
-            <label for="destination">Saturn</label><br>
+            <label for="saturn">Saturn</label><br>
             <p id="cruiseThree"></p>
 
             <h2>Extras:</h2><br>
@@ -97,7 +97,7 @@
             <br>
             
             <button id="btn">Est Total</button><br>
-            <button id="btn-pay" href="payment.html">Payment</button>
+            <a style="pointer-events: none;" id="btn-pay" href="payment.html" disabled>Payment</a>
             <br>
         </form>
     </div>
