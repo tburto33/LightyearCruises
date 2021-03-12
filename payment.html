@@ -85,7 +85,7 @@
                 </div>
                 <div class="form-group">
                     <label for="state">State</label><br>
-                    <select name="state" class="state-list">
+                    <select name="state" class="state-list" id="state">
                         <option value="AL">Alabama</option>
                         <option value="AK">Alaska</option>
                         <option value="AZ">Arizona</option>
@@ -159,18 +159,18 @@
         </form>
         <button type="button" class="btn" id="sub-btn" data-toggle="modal" data-target="#payModal" style="color:black;">Submit</button>
     </div>
-    <div id="payModal" class="modal fade" role="dialog">
+    <div id="payModal" class="modal" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <h2>Cruise Confirmation:</h2>
                 </div>
                 <div class="modal-body">
-                    <p id="modal-name"></p>
-                    <p id="modal-email"></p>
-                    <p id="modal-address"></p>
-                    <p id="modal-city"></p>
-                    <p id="modal-phone"></p>
+                    <h2>Name:</h2> <p id="modal-name"></p>
+                    <h2>Email:</h2> <p id="modal-email"></p>
+                    <h2>Address:</h2> <p id="modal-address"></p>
+                    <h2>City:</h2> <p id="modal-city"></p> <h2>State:</h2><p id="modal-state"></p>
+                    <h2>Phone:</h2> <p id="modal-phone"></p>
                     <p id="modal-dest"></p>
                     <p id="modal-extra"></p>
                     <p id="modal-total"></p>
@@ -182,6 +182,7 @@
         </div>
 
     </div>
+    <script src="js/cruiseData.js"></script>
     <script src="js/billing.js"></script>
 </body>
 </html>

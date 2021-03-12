@@ -23,6 +23,11 @@
     color: black;
 }
 
+.modal-content {
+    color: black;
+    text-align: left;
+}
+
 @media only screen and (max-width: 780px){
     #form-style {
         width: 100%;

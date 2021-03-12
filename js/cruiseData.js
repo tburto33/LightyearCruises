@@ -1,5 +1,8 @@
- // **OBJECTS**
+let totalTripCost = [];
+let destName = [];
 
+
+// **OBJECTS**
 const cruiseOne = 
 {
     name: "Mars",
@@ -28,10 +31,4 @@ function postCruiseInfo(cruiseName, cruiseDepart, cruiseReturn, cruiseCost){
     return `The cruise to ${cruiseName} leaves ${cruiseDepart} and will return ${cruiseReturn}.` + "<br>" + `Price: ${cruiseCost}`;
 }
 
-document.addEventListener('DOMContentLoaded', ()=>{
-    document.getElementById('cruiseOne').innerHTML = postCruiseInfo(cruiseOne.name, cruiseOne.departure, cruiseOne.return, cruiseOne.cost);
 
-    document.getElementById('cruiseTwo').innerHTML = postCruiseInfo(cruiseTwo.name, cruiseTwo.departure, cruiseTwo.return, cruiseTwo.cost);
-
-    document.getElementById('cruiseThree').innerHTML = postCruiseInfo(cruiseThree.name, cruiseThree.departure, cruiseThree.return, cruiseThree.cost);
-})
