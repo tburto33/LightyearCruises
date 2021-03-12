@@ -4,10 +4,10 @@ var formatter = new Intl.NumberFormat('en-US', {
     currency: 'USD'
 });
 
+let checkedVal = []; //temp array for stored values
 //checks for destination & extras returns total of values
 const getCruiseCost = (e) => {
     e.preventDefault();
-    var checkedVal = []; //temp array for stored values
 
     //validates destination & pushes value of checked to array
     let dest = document.querySelector('input[name=planet]:checked');
@@ -31,6 +31,7 @@ const getCruiseCost = (e) => {
 
     //adds values from array and returns total to form.html
     document.getElementById('tripTotal').innerHTML = `${tripTotal}`;
+    export{tripTotal};
 }
 
 //listener for Est Total btn on destform.html

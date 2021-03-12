@@ -30,7 +30,7 @@ const getContactInfo = (e)=>{
         if(info.city == ""){
             alert("City Required");
         }
-        if(info.zipcode == "" || info.zipcode !== "40229"){
+        if(info.zipcode == "" || info.zipcode.length !== 5){
             alert("Zipcode Invalid");
         }
         if(info.ccNumber == "" || info.ccNumber !== "1234123412341234"){
@@ -45,6 +45,21 @@ const getContactInfo = (e)=>{
         console.log(contactInfo);
 }    
 
+const postModal = () =>{
+    import{tripTotal} from 'js\getInfo.js'
+
+    document.getElementById("modal-name").innerHTML= `${contactInfo.firstName.value} ${contactInfo.lastName.value}`;
+    document.getElementById("modal-email").innerHTML= `${contactInfo.email.value}`;
+    document.getElementById("modal-address").innerHTML= `${contactInfo.address.value}`;
+    document.getElementById("modal-city").innerHTML= `${contactInfo.city.value}`;
+    document.getElementById("modal-phone").innerHTML= `${contactInfo.phone.value}`;
+    // document.getElementById("modal-dest").innerHTML= `${contactInfo.city.value}`;
+    // document.getElementById("modal-extra").innerHTML= `${contactInfo.city.value}`;
+    document.getElementById("modal-total").innerHTML=`${tripTotal.value}`;
+}
+
 document.addEventListener('DOMContentLoaded', ()=>{
     document.getElementById('sub-btn').addEventListener('click', getContactInfo);
+    document.getElementById('sub-btn').addEventListener('click', postModal);
 })
+

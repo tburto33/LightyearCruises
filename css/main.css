@@ -70,6 +70,9 @@ h2 {
     margin-top: 20px;
 }
 
+.cancel-container {
+    margin: 0 auto;
+}
 
 /* STYLES */
 
@@ -88,6 +91,11 @@ h2 {
     #dest-carousel{
         width: 750px;
         margin: auto;
+    }
+
+    .banner-heading,
+    .banner-slogan {
+        display: none;
     }
 }
 

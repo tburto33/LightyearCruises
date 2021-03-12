@@ -7,3 +7,12 @@ Features:
 - Media Queries at vairous sizes to fix viewing content:
 - Ham Menu, Carousel, Logo, and others.
 - JS based around using forms to gather info to post, validate, and use in modal.
+
+***Payment Info Page data:
+(Enter below info for validation)
+Card Number = 1234123412341234
+Exp: 0977
+Code: 000
+
+Fake Features:
+-Only Home link works in nav!
