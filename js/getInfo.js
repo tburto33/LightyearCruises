@@ -42,9 +42,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
     destMars.addEventListener('change', enPayBtn);
     destJupiter.addEventListener('change', enPayBtn);
     destSaturn.addEventListener('change', enPayBtn);
-    //first: find dest element
-    //second: eventlistener on element on change or click
-    //
     document.getElementById('btn').addEventListener('click', getCruiseCost);
 })
 

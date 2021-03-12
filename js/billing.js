@@ -9,7 +9,7 @@ const getContactInfo = (e)=>{
         phone: document.getElementById("phone").value,
         address: document.getElementById("address").value,
         city: document.getElementById("city").value,
-        // zipcode: document.getElementById("zipCode").value,
+        zipcode: document.getElementById("zipCode").value,
         ccNumber: document.getElementById("ccNumber").value,
         ccExp: document.getElementById("ccExp").value,
         ccCode: document.getElementById("ccCode").value
@@ -30,9 +30,9 @@ const getContactInfo = (e)=>{
         if(info.city == ""){
             alert("City Required");
         }
-        // if(info.zipcode == "" || info.zipcode !== "40229"){
-        //     alert("Zipcode Invalid");
-        // }
+        if(info.zipcode == "" || info.zipcode !== "40229"){
+            alert("Zipcode Invalid");
+        }
         if(info.ccNumber == "" || info.ccNumber !== "1234123412341234"){
             alert("Credit Card Number Invalid");
         }
@@ -48,22 +48,3 @@ const getContactInfo = (e)=>{
 document.addEventListener('DOMContentLoaded', ()=>{
     document.getElementById('sub-btn').addEventListener('click', getContactInfo);
 })
-
-
-//gets contact information
-// let contactInfo = [];
-// const getContactInfo = (e)=>{
-//     e.preventDefault();
-//     let info = {
-//         firstName: document.getElementById("firstName").value,
-//         lastName: document.getElementById("lastName").value,
-//         email: document.getElementById("email").value
-//     }
-//     info.push(info);
-
-//     if(info.firstName == "" || info.lastName == "" || info.email == ""){
-//         alert("Missing information");
-//     }else {
-//         console.log(`Hello, ${info.firstName} ${info.lastName}. Your email is ${info.email}.`);
-//     }    
-// }

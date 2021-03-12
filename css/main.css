@@ -100,3 +100,15 @@ h2 {
         margin: 20px 10%
     }
 }
+
+@media only screen and (max-width: 500px){
+    .main-banner{
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .main-banner {
+        margin-top: 40px;
+    }
+}
