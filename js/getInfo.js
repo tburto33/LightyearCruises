@@ -25,20 +25,20 @@ const getCruiseCost = (e) => {
     let dest = document.querySelector('input[name=planet]:checked');
     if(dest){
         checkedVal.push(parseInt(dest.value));
-        destName.push(dest.id);
+        destName.push(dest.id.toUpperCase());
         enPayBtn();
     }else{
         alert("Please select a destination!");
     }
 
-    //loops through extras for checked values
-    var extras = document.getElementsByName("extra");
+    //loops through extras for checked values     
+    let extras = document.getElementsByName("extra");
     for(i=0; extras[i]; i++){
         if(extras[i].checked){
             checkedVal.push(parseInt(extras[i].value));
         }
     }
-
+        
     //adds all extras and dest values pushed to checkedVal[]
     let tripTotal = formatter.format(checkedVal.reduce((a,b) => a + b, 0));
 
@@ -48,6 +48,7 @@ const getCruiseCost = (e) => {
     //pushes total to temp array in cruiseData.js
     totalTripCost.push(tripTotal);
     console.log(totalTripCost);
+    console.log(destName);
 }
 
 //listener for Est Total btn on destform.html
@@ -82,6 +83,3 @@ function resetCheckedVal(){
     totalTripCost.length = 0;
     destName.length = 0;
 }
-
-
-

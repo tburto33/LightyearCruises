@@ -1,6 +1,11 @@
 let totalTripCost = [];
 let destName = [];
 
+let myObject = {
+    cost: totalTripCost[0],
+    dest: destName[0]
+}
+
 
 // **OBJECTS**
 const cruiseOne = 
