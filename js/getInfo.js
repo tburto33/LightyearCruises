@@ -25,7 +25,7 @@ const getCruiseCost = (e) => {
     let dest = document.querySelector('input[name=planet]:checked');
     if(dest){
         checkedVal.push(parseInt(dest.value));
-        destName.push(dest.id.toUpperCase());
+        sessionStorage.setItem('place', dest.id.toUpperCase());
         enPayBtn();
     }else{
         alert("Please select a destination!");
@@ -45,15 +45,13 @@ const getCruiseCost = (e) => {
     //adds values from array and returns total to form.html
     document.getElementById('tripTotal').innerHTML = `${tripTotal}`;
 
-    //pushes total to temp array in cruiseData.js
-    totalTripCost.push(tripTotal);
-    console.log(totalTripCost);
-    console.log(destName);
+    //stores total for use in billing.js
+    sessionStorage.setItem('total', tripTotal);
 }
 
-//listener for Est Total btn on destform.html
 document.addEventListener('DOMContentLoaded', ()=>{
 
+    //cruise information on destform.html
     document.getElementById('cruiseOne').innerHTML = postCruiseInfo(cruiseOne.name, cruiseOne.departure, cruiseOne.return, cruiseOne.cost);
     document.getElementById('cruiseTwo').innerHTML = postCruiseInfo(cruiseTwo.name, cruiseTwo.departure, cruiseTwo.return, cruiseTwo.cost);
     document.getElementById('cruiseThree').innerHTML = postCruiseInfo(cruiseThree.name, cruiseThree.departure, cruiseThree.return, cruiseThree.cost);
@@ -78,8 +76,7 @@ function enPayBtn(){
     document.getElementById('btn-pay').style.pointerEvents = "auto";
 }
 
+//resets checkedVal[] as items are selected
 function resetCheckedVal(){
     checkedVal.length = 0;
-    totalTripCost.length = 0;
-    destName.length = 0;
 }
