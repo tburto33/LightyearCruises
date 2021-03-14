@@ -23,6 +23,10 @@
     padding-left: 10px;
 }
 
+#payModal {
+    display: none;
+}
+
 .main-body,
 .modal-body {
     background-image: url("../img/stars.png");
@@ -40,6 +44,8 @@
     color: black;
     text-align: left;
 }
+
+
 
 @media only screen and (max-width: 780px){
     #form-style {

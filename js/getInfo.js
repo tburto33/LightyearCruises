@@ -17,9 +17,8 @@ var formatter = new Intl.NumberFormat('en-US', {
 let checkedVal = [];
 
 //checks for destination & extras returns total of values
-const getCruiseCost = (e) => {
+const getCruiseCost = () => {
     resetCheckedVal();
-    e.preventDefault();
 
     //validates destination & pushes value of checked to array
     let dest = document.querySelector('input[name=planet]:checked');
