@@ -21,43 +21,46 @@ const getContactInfo = (e)=>{
 
     contactInfo.push(info);
 
-    if(info.firstName == "" || info.lastName == ""){
-        alert("First/Last Name Required");
-        return false;
-    }
-    if(info.email == ""){
-        alert("Email Required");
-        return false;
-    }
-    if(info.phone == "" || info.phone.length !== 10){
-        alert("Phone invalid. 10 digits no spaces, dashes, or ()");
-        return false;
-    }
-    if(info.address == ""){
-        alert("Address Required");
-        return false;
-    }
-    if(info.city == ""){
-        alert("City Required");
-        return false;
-    }
-    if(info.zipcode == "" || info.zipcode.length !== 5){
-        alert("Zipcode Invalid. Must be 5 digits.");
-        return false;
-    }
-    if(info.ccNumber == "" || info.ccNumber !== "1234123412341234"){
-        alert("Credit Card Number Invalid");
-        return false;
-    }
-    if(info.ccExp == "" || info.ccExp !== "0977"){
-        alert("Invalid Credit Card Expiration");
-        return false;
-    }
+    // if(info.firstName == "" || info.lastName == ""){
+    //     alert("First/Last Name Required");
+    //     return false;
+    // }
+    // if(info.email == ""){
+    //     alert("Email Required");
+    //     return false;
+    // }
+    // if(info.phone == "" || info.phone.length !== 10){
+    //     alert("Phone invalid. 10 digits no spaces, dashes, or ()");
+    //     return false;
+    // }
+    // if(info.address == ""){
+    //     alert("Address Required");
+    //     return false;
+    // }
+    // if(info.city == ""){
+    //     alert("City Required");
+    //     return false;
+    // }
+    // if(info.zipcode == "" || info.zipcode.length !== 5){
+    //     alert("Zipcode Invalid. Must be 5 digits.");
+    //     return false;
+    // }
+    // if(info.ccNumber == "" || info.ccNumber !== "1234123412341234"){
+    //     alert("Credit Card Number Invalid");
+    //     return false;
+    // }
+    // if(info.ccExp == "" || info.ccExp !== "0977"){
+    //     alert("Invalid Credit Card Expiration");
+    //     return false;
+    // }
     if(info.ccCode == "" || info.ccCode !== "000"){
         alert("Invalid Credit Card Security Code");
     }else{
+        alert("Payment Successful!");
         return true;
     }
+
+    displayModal;
 }
 
 //posts all gathered data to modal for trip confirmation
@@ -87,7 +90,15 @@ const postModal = () =>{
 
 document.addEventListener('DOMContentLoaded', ()=>{
     document.getElementById('sub-btn').addEventListener('click', getContactInfo);
-    document.getElementById('sub-btn').addEventListener('click', postModal);
+    // document.getElementById('sub-btn').addEventListener('click', displayModal);
+    document.getElementById('mod-btn').addEventListener('click', postModal);
 })
 
+
+
+function displayModal(){
+    if(getContactInfo === true){
+        document.getElementById('mod-btn').style.visibility = "visible";
+    }
+}
 

@@ -160,7 +160,9 @@
                 </div>
             </div>
         </form>
-        <button type="button" class="btn" id="sub-btn" data-toggle="modal" data-target="#payModal" style="color:black;">Submit</button>
+        <button type="button" class="btn" id="sub-btn"style="color:black;">Submit</button>
+        <br><br>
+        <button type="button" class="btn" id="mod-btn" data-toggle="modal" data-target="#payModal" data-backdrop="static" style="color:black; visibility: hidden;">Continue</button>
     </div>
     <div id="payModal" class="modal" role="dialog">
         <div class="modal-dialog">
@@ -172,18 +174,27 @@
                 <div class="modal-body">
                     <h3>Name:</h3> 
                     <h4 id="modal-name"></h4>
+
                     <h3>Email:</h3> 
-                    <p id="modal-email"></p>
+                    <h4 id="modal-email"></h4>
+
                     <h3>Address:</h3> 
-                    <p id="modal-address"></p>
+                    <h4 id="modal-address"></h4>
+
                     <h3>City:</h3> 
-                    <p id="modal-city"></p> <h2>State:</h2><p id="modal-state"></p>
+                    <h4 id="modal-city"></h4> 
+
+                    <h3>State:</h3>
+                    <h4 id="modal-state"></h4>
+
                     <h3>Phone:</h3> 
-                    <p id="modal-phone"></p>
+                    <h4 id="modal-phone"></h4>
+
                     <h3>Booking Details:</h3>
-                    <p id="modal-dest"></p>
+                    <h4 id="modal-dest"></h4>
+                    
                     <h3>Amount Billed:</h3>
-                    <p id="modal-total"></p>
+                    <h4 id="modal-total"></h4>
                 </div>
                 <div class="modal-footer">
                     <a href="index.html">Close</a>

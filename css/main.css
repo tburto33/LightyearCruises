@@ -1,5 +1,8 @@
 /* ID'S */
-
+#can-item {
+    color: black;
+    background-color: whitesmoke;
+}
 
 /* BASE STYLES */
 
@@ -10,7 +13,7 @@ h2 {
 /* IMAGE STYLES */
 
 .main-banner {
-    padding-top: 20px;
+    padding-top: 30px;
 }
 
 .spaceship {
@@ -25,11 +28,18 @@ h2 {
     position: relative;
 }
 
-.banner-text{
+.banner-heading {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 8px;
+    left: 16px;
+    text-align: left;
+}
+
+.banner-slogan {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    text-align: right;
 }
 
 .cancel-img,
@@ -51,6 +61,11 @@ h2 {
     text-align: left;
 }
 
+.book-btn {
+    color: black;
+    background-color: silver;
+}
+
 .dest-btn {
     position: absolute;
     bottom: 8px;
@@ -68,10 +83,26 @@ h2 {
 .cancel-container,
 .vessel {
     margin-top: 20px;
+    color: black;
 }
 
 .cancel-container {
     margin: 0 auto;
+    padding: 0 30px;
+
+}
+
+.cancel-item,
+.money-item {
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    padding-bottom: 5px;
+    width: 33%;
+}
+
+.cancel-item {
+    margin-right: 3px;
 }
 
 /* STYLES */
@@ -84,6 +115,12 @@ h2 {
     text-align: center;
     background-color: black;
     color: whitesmoke;
+}
+
+.equal {
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
 }
 
 /** MEDIA QUERIES **/
@@ -109,9 +146,23 @@ h2 {
     }
 }
 
+@media only screen and (max-width: 760px){
+    .cancel-item,
+    .money-item {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
 @media only screen and (max-width: 500px){
     .main-banner{
         margin-top: 20px;
+    }
+}
+
+@media only screen and (min-width: 500px){
+    .banner-heading {
+        top: 32px;
     }
 }
 
