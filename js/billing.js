@@ -1,6 +1,18 @@
 //temp array to store contact info
 let contactInfo = [];
 
+var firstName = document.getElementById("firstName").value;
+var lastName = document.getElementById("lastName").value;
+var email = document.getElementById("email").value;
+var phone = document.getElementById("phone").value;
+var address = document.getElementById("address").value;
+var city = document.getElementById("city").value;
+var state = document.getElementById("state").selectedIndex;
+var zipCode = document.getElementById("zipCode").value;
+var ccNumber = document.getElementById("ccNumber").value;
+var ccExp = document.getElementById("ccExp").value;
+var ccCode = document.getElementById("ccCode").value;
+
 //get contact information from payment.html
 const getContactInfo = (e)=>{
     e.preventDefault();
@@ -12,7 +24,7 @@ const getContactInfo = (e)=>{
         address: document.getElementById("address").value,
         city: document.getElementById("city").value,
         zipcode: document.getElementById("zipCode").value,
-        state: document.getElementById("state").value,
+        // state: document.getElementById("state").selectedIndex,
         ccNumber: document.getElementById("ccNumber").value,
         ccExp: document.getElementById("ccExp").value,
         ccCode: document.getElementById("ccCode").value
@@ -35,7 +47,7 @@ const postModal = () =>{
     document.getElementById("modal-address").innerHTML= `${contactInfo[0].address}`;
     document.getElementById("modal-city").innerHTML= `${contactInfo[0].city}`;
     document.getElementById("modal-phone").innerHTML= `${contactInfo[0].phone}`;
-    document.getContactInfo("modal-state").innerHTML= `${contactInfo[0].state}`;
+    document.getElementById("modal-state").innerHTML= `${document.getElementsByTagName("option")[state].text}`;
     document.getElementById("modal-total").innerHTML= `${tripCost}`;
 
     switch(tripName){
@@ -53,7 +65,6 @@ const postModal = () =>{
 document.addEventListener('DOMContentLoaded', ()=>{
     document.getElementById('sub-btn').addEventListener('click', getContactInfo);
     document.getElementById('sub-btn').addEventListener('click', postModal);
-    // document.getElementById('mod-btn').addEventListener('click', postModal);
 })
 
 
