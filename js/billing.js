@@ -20,6 +20,7 @@ var confirmationModalCity= document.getElementById("modal-city");
 var confirmationModalPhone = document.getElementById("modal-phone");
 var confirmationModalState = document.getElementById("modal-state");
 var confirmationModalTotal = document.getElementById("modal-total");
+var confirmationModal = document.getElementById("payModal");
 
 //**PULLS STORED SESSION DATA FROM DESTINATION.JS**
 let tripName = sessionStorage.getItem('place');
@@ -63,7 +64,7 @@ const setModalValues = () =>{
 
 //changes modal display style from "hidden"
 function displayConfirmationModal(){
-    document.getElementById('payModal').style.display = "block";
+    confirmationModal.style.display = "block";
 }
 
 //validates payment form values
@@ -107,4 +108,3 @@ function isPaymentFormValid(){
         return true;
     }
 }
-

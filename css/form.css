@@ -1,4 +1,23 @@
+/* FONT STYLES */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
 /* ID's */
+#main-nav {
+    font-size: 2vw;
+    font-family: 'Orbitron', Arial, Helvetica, sans-serif;
+}
+
+#body-style {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0 auto;
+}
+
+#footer {
+    margin-top: 10px;
+    font-size: smaller;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: block;
+}
 
 #btn {
     background-color: silver;
@@ -15,30 +34,30 @@
     background-color: silver;
     text-align: center;
     color: black;
-
 }
 
 #form-style {
-    width: 50%;
-    margin: 0 auto;
+    width: 100%;
     padding: 20px 0;
     padding-left: 10px;
 }
 
 #payModal {
     display: none;
+    max-height: 100vh - 200px;
+    overflow-y: auto;
 }
 
 
 /* STYLES */
 
-.main-body,
-.modal-body {
+.main-body {
     background-image: url("../img/stars.png");
     height: 100%;
     background-position: center;
     background-size: cover;
     color: whitesmoke;
+    max-width: 960px;
 }
 
 .state-list {
@@ -53,18 +72,56 @@
 .modal-dialog {
     overflow-y: initial !important
 }
+
+.fa {
+    padding: 10px;
+    font-size: 20px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    margin: 0 2px;
+  }
+
 .modal-body {
-    max-height: 100vh - 200px;
+    height: 60vh;
+    width: auto;
     overflow-y: auto;
+    background-color: darkslategray;
+    color: whitesmoke;
 }
 
 /* MEDIA QUERY */
 
 @media only screen and (max-width: 780px){
     #form-style {
-        width: 100%;
+        text-align: left;
     }
+
     .navbar-brand {
         display: none;
+    }
+}
+
+@media only screen and (min-width: 780px){
+    .body-style {
+        margin: auto;
+    }
+}
+
+@media only screen and (max-width: 1000px){
+    .fa {
+        width: 20px;
+    }
+}
+
+@media screen and (min-width: 50em) {
+    #main-nav {
+        font-size: 1vw;
+    }
+}
+
+@media screen and (min-width: 75em) {
+    #main-nav {
+        font-size: 1.5em;
     }
 }

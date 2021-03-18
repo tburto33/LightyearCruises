@@ -1,4 +1,18 @@
+/* FONT STYLES */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
 /* ID'S */
+#body-style {
+    font-size: 2vw;
+    font-family: 'Orbitron', Arial, Helvetica, sans-serif;
+}
+
+#footer {
+    margin-top: 10px;
+    font-size: smaller;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
 #can-item {
     color: black;
     background-color: whitesmoke;
@@ -59,6 +73,10 @@ h2 {
     bottom: 8px;
     left: 16px;
     text-align: left;
+}
+
+.carousel-text h6 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .book-btn {
@@ -123,7 +141,27 @@ h2 {
     flex-wrap: wrap;
 }
 
+.banner-heading,
+.banner-slogan {
+    text-shadow: 4px 4px 4px #aaa;
+}
+
+.fa {
+  padding: 10px;
+  font-size: 20px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 0 2px;
+}
+
 /** MEDIA QUERIES **/
+@media only screen and (max-width: 1000px){
+    .fa {
+        width: 20px;
+    }
+}
+
 @media only screen and (min-width: 780px){
     #dest-carousel{
         width: 750px;
@@ -169,5 +207,17 @@ h2 {
 @media only screen and (max-width: 400px){
     .main-banner {
         margin-top: 40px;
+    }
+}
+
+@media screen and (min-width: 50em) {
+    #body-style {
+        font-size: 1vw;
+    }
+}
+
+@media screen and (min-width: 75em) {
+    #body-style {
+        font-size: 1.5em;
     }
 }

@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!--Icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -18,8 +20,8 @@
 
     <title>Book Cruise</title>
 </head>
-<body class="main-body">
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+<body class="main-body" id="body-style">
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="main-nav">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -44,6 +46,7 @@
     </nav>
     <br>
     <br>
+    <a id="top"></a>
     <div id="form-style">
         <form name ="booking-form">
             <h2>Destination:</h2><br>
@@ -102,6 +105,22 @@
             <a style="pointer-events: none;" id="btn-pay" href="payment.html">Continue</a>
             <br>
         </form>
+        <div class="container" id="footer">
+            <div class="row">
+                <div class="col-xs-4">
+                    <p class="footer-copyright">&copy; 2077 Lightyear Liners Intergalactic</p>
+                </div>
+                <div class="col-xs-4">
+                    <a href="#top">Back to Top</a>
+                </div>
+                <div class="col-xs-4">
+                    <a class="fa fa-facebook-official"></a>
+                    <a class="fa fa-twitter-square"></a>
+                    <a class="fa fa-instagram"></a>
+                    <a class="fa fa-youtube-square"></a>
+                </div>
+            </div>
+        </div>
     </div>
 <script src="js/destForm.js"></script>
 <script src="js/cruiseData.js"></script>
