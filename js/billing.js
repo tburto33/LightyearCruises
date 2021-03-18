@@ -10,17 +10,16 @@ var zipCode = document.getElementById("zipCode");
 var ccNumber = document.getElementById("ccNumber");
 var ccExp = document.getElementById("ccExp");
 var ccCode = document.getElementById("ccCode");
+var stateValue = document.getElementsByTagName("option")[state].text;
 
 //**CONFIRMATION MODAL ELEMENTS**
-var modalName = document.getElementById("modal-name");
-var modalEmail = document.getElementById("modal-email");
-var modalAddress = document.getElementById("modal-address");
-var modalCity= document.getElementById("modal-city");
-var modalPhone = document.getElementById("modal-phone");
-var modalState = document.getElementById("modal-state");
-var modalTotal = document.getElementById("modal-total");
-
-let stateValue = document.getElementsByTagName("option")[state].text;
+var confirmationModalName = document.getElementById("modal-name");
+var confirmationModalEmail = document.getElementById("modal-email");
+var confirmationModalAddress = document.getElementById("modal-address");
+var confirmationModalCity= document.getElementById("modal-city");
+var confirmationModalPhone = document.getElementById("modal-phone");
+var confirmationModalState = document.getElementById("modal-state");
+var confirmationModalTotal = document.getElementById("modal-total");
 
 //**PULLS STORED SESSION DATA FROM DESTINATION.JS**
 let tripName = sessionStorage.getItem('place');
@@ -29,7 +28,7 @@ let tripCost = sessionStorage.getItem('total');
 //validates payment form fields and displays modal if "true"
 const executePaymentForm = ()=>{
     if(isPaymentFormValid()){
-        postModalValues();
+        setModalValues();
         displayConfirmationModal();
     }
 }
@@ -41,15 +40,14 @@ document.addEventListener('DOMContentLoaded', ()=>{
 //**PAYMENT FORM FUNCTIONS**
 
 //Inserts payment form values into confirmation modal
-const postModalValues = () =>{
-
-    modalName.innerHTML = `${firstName.value} ${lastName.value}`;
-    modalEmail.innerHTML = `${email.value}`;
-    modalAddress.innerHTML = `${address.value}`;
-    modalCity.innerHTML = `${city.value}`;
-    modalPhone.innerHTML = `${phone.value}`;
-    modalState.innerHTML = `${stateValue}`;
-    modalTotal.innerHTML = `${tripCost}`;
+const setModalValues = () =>{
+    confirmationModalName.innerHTML = `${firstName.value} ${lastName.value}`;
+    confirmationModalEmail.innerHTML = `${email.value}`;
+    confirmationModalAddress.innerHTML = `${address.value}`;
+    confirmationModalCity.innerHTML = `${city.value}`;
+    confirmationModalPhone.innerHTML = `${phone.value}`;
+    confirmationModalState.innerHTML = `${stateValue}`;
+    confirmationModalTotal.innerHTML = `${tripCost}`;
 
     switch(tripName){
         case "MARS":
@@ -70,39 +68,38 @@ function displayConfirmationModal(){
 
 //validates payment form values
 function isPaymentFormValid(){
-
-    // if(firstName.value == "" || lastName.value == ""){
-    //     alert("First/Last Name Required");
-    //     return false;
-    // }
-    // if(email.value == ""){
-    //     alert("Email Required");
-    //     return false;
-    // }
-    // if(address.value == ""){
-    //     alert("Address Required");
-    //     return false;
-    // }
-    // if(phone.value == "" || phone.value.length !== 10){
-    //     alert("Phone invalid. 10 digits no spaces, dashes, or ()");
-    //     return false;
-    // }
-    // if(zipCode.value == "" || zipCode.value.length !== 5){
-    //     alert("Zipcode Invalid. Must be 5 digits.");
-    //     return false;
-    // }
-    // if(city.value == ""){
-    //     alert("City Required");
-    //     return false;
-    // }
-    // if(ccNumber.value == "" || ccNumber.value !== "1234123412341234"){
-    //     alert("Credit Card Number Invalid");
-    //     return false;
-    // }
-    // if(ccExp.value == "" || ccExp.value !== "0977"){
-    //     alert("Invalid Credit Card Expiration");
-    //     return false;
-    // }
+    if(firstName.value == "" || lastName.value == ""){
+        alert("First/Last Name Required");
+        return false;
+    }
+    if(email.value == ""){
+        alert("Email Required");
+        return false;
+    }
+    if(address.value == ""){
+        alert("Address Required");
+        return false;
+    }
+    if(phone.value == "" || phone.value.length !== 10){
+        alert("Phone invalid. 10 digits no spaces, dashes, or ()");
+        return false;
+    }
+    if(zipCode.value == "" || zipCode.value.length !== 5){
+        alert("Zipcode Invalid. Must be 5 digits.");
+        return false;
+    }
+    if(city.value == ""){
+        alert("City Required");
+        return false;
+    }
+    if(ccNumber.value == "" || ccNumber.value !== "1234123412341234"){
+        alert("Credit Card Number Invalid");
+        return false;
+    }
+    if(ccExp.value == "" || ccExp.value !== "0977"){
+        alert("Invalid Credit Card Expiration");
+        return false;
+    }
     if(ccCode.value == "" || ccCode.value !== "000"){   
         alert("Invalid Credit Card Security Code");
     }else{

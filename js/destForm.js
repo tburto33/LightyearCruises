@@ -18,7 +18,7 @@ var formatter = new Intl.NumberFormat('en-US', {
 let checkedVal = [];
 
 //checks for destination & extras returns total of values
-const getCruiseCost = () => {
+const calcCruiseCost = () => {
     resetCheckedVal();
 
     //validates destination, pushes value of radio to checkedVal, & stores destination id
@@ -62,13 +62,13 @@ document.addEventListener('DOMContentLoaded', ()=>{
     destSaturn.addEventListener('change', enableContinueBtn);
 
     //resets estimated price as extras/destination is changed
-    destMars.addEventListener('change', getCruiseCost);
-    destJupiter.addEventListener('change', getCruiseCost);
-    destSaturn.addEventListener('change', getCruiseCost);
-    extraSpaceWalk.addEventListener('change', getCruiseCost);
-    extraZeroG.addEventListener('change', getCruiseCost);
-    extraShuttle.addEventListener('change', getCruiseCost);
-    extraVIP.addEventListener('change', getCruiseCost);
+    destMars.addEventListener('change', calcCruiseCost);
+    destJupiter.addEventListener('change', calcCruiseCost);
+    destSaturn.addEventListener('change', calcCruiseCost);
+    extraSpaceWalk.addEventListener('change', calcCruiseCost);
+    extraZeroG.addEventListener('change', calcCruiseCost);
+    extraShuttle.addEventListener('change', calcCruiseCost);
+    extraVIP.addEventListener('change', calcCruiseCost);
 })
 
 //**OTHER FUNCTIONS
