@@ -1,3 +1,5 @@
+/* ID's */
+
 #btn {
     background-color: silver;
     color: black;
@@ -27,6 +29,9 @@
     display: none;
 }
 
+
+/* STYLES */
+
 .main-body,
 .modal-body {
     background-image: url("../img/stars.png");
@@ -45,7 +50,15 @@
     text-align: left;
 }
 
+.modal-dialog {
+    overflow-y: initial !important
+}
+.modal-body {
+    max-height: 100vh - 200px;
+    overflow-y: auto;
+}
 
+/* MEDIA QUERY */
 
 @media only screen and (max-width: 780px){
     #form-style {

@@ -1,11 +1,12 @@
-//Elements
-const destMars = document.getElementById('mars');
-const destJupiter = document.getElementById('jupiter');
-const destSaturn = document.getElementById('saturn');
-const extraSpaceWalk = document.getElementById('spacewalk');
-const extraZeroG = document.getElementById('zero-gravity');
-const extraShuttle = document.getElementById('shuttle');
-const extraVIP = document.getElementById('vip');
+//**DESTINATION FORM ELEMENTS
+var destMars = document.getElementById('mars');
+var destJupiter = document.getElementById('jupiter');
+var destSaturn = document.getElementById('saturn');
+var extraSpaceWalk = document.getElementById('spacewalk');
+var extraZeroG = document.getElementById('zero-gravity');
+var extraShuttle = document.getElementById('shuttle');
+var extraVIP = document.getElementById('vip');
+var cruiseTotal = document.getElementById('calculatedTotal');
 
 //formats numbers to US Currency
 var formatter = new Intl.NumberFormat('en-US', {
@@ -13,24 +14,24 @@ var formatter = new Intl.NumberFormat('en-US', {
     currency: 'USD'
 });
 
-//temp array for stored value
+//temp array for stored values
 let checkedVal = [];
 
 //checks for destination & extras returns total of values
 const getCruiseCost = () => {
     resetCheckedVal();
 
-    //validates destination & pushes value of checked to array
+    //validates destination, pushes value of radio to checkedVal, & stores destination id
     let dest = document.querySelector('input[name=planet]:checked');
     if(dest){
         checkedVal.push(parseInt(dest.value));
         sessionStorage.setItem('place', dest.id.toUpperCase());
-        enPayBtn();
+        enableContinueBtn();
     }else{
         alert("Please select a destination!");
     }
 
-    //loops through extras for checked values     
+    //loops through extras for checked values to store in checkedVal     
     let extras = document.getElementsByName("extra");
     for(i=0; extras[i]; i++){
         if(extras[i].checked){
@@ -42,7 +43,7 @@ const getCruiseCost = () => {
     let tripTotal = formatter.format(checkedVal.reduce((a,b) => a + b, 0));
 
     //adds values from array and returns total to form.html
-    document.getElementById('tripTotal').innerHTML = `${tripTotal}`;
+    cruiseTotal.innerHTML = `${tripTotal}`;
 
     //stores total for use in billing.js
     sessionStorage.setItem('total', tripTotal);
@@ -50,17 +51,17 @@ const getCruiseCost = () => {
 
 document.addEventListener('DOMContentLoaded', ()=>{
 
-    //cruise information on destform.html
+    //cruise information inserted into destform.html from cruiseData.js
     document.getElementById('cruiseOne').innerHTML = postCruiseInfo(cruiseOne.name, cruiseOne.departure, cruiseOne.return, cruiseOne.cost);
     document.getElementById('cruiseTwo').innerHTML = postCruiseInfo(cruiseTwo.name, cruiseTwo.departure, cruiseTwo.return, cruiseTwo.cost);
     document.getElementById('cruiseThree').innerHTML = postCruiseInfo(cruiseThree.name, cruiseThree.departure, cruiseThree.return, cruiseThree.cost);
   
     //enables continue link for payment page
-    destMars.addEventListener('change', enPayBtn);
-    destJupiter.addEventListener('change', enPayBtn);
-    destSaturn.addEventListener('change', enPayBtn);
+    destMars.addEventListener('change', enableContinueBtn);
+    destJupiter.addEventListener('change', enableContinueBtn);
+    destSaturn.addEventListener('change', enableContinueBtn);
 
-    //resets estimated price 
+    //resets estimated price as extras/destination is changed
     destMars.addEventListener('change', getCruiseCost);
     destJupiter.addEventListener('change', getCruiseCost);
     destSaturn.addEventListener('change', getCruiseCost);
@@ -70,12 +71,14 @@ document.addEventListener('DOMContentLoaded', ()=>{
     extraVIP.addEventListener('change', getCruiseCost);
 })
 
-//enables payment button on destform.html when dest selected
-function enPayBtn(){
+//**OTHER FUNCTIONS
+
+//enables payment button on destform.html
+function enableContinueBtn(){
     document.getElementById('btn-pay').style.pointerEvents = "auto";
 }
 
-//resets checkedVal[] as items are selected
+//resets checkedVal[]
 function resetCheckedVal(){
     checkedVal.length = 0;
 }

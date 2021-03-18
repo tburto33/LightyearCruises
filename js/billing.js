@@ -1,54 +1,55 @@
-//temp array to store contact info
-let contactInfo = [];
-
-var firstName = document.getElementById("firstName").value;
-var lastName = document.getElementById("lastName").value;
-var email = document.getElementById("email").value;
-var phone = document.getElementById("phone").value;
-var address = document.getElementById("address").value;
-var city = document.getElementById("city").value;
+ //**PAYMENT FORM ELEMENTS**
+var firstName = document.getElementById("firstName");
+var lastName = document.getElementById("lastName");
+var email = document.getElementById("email");
+var phone = document.getElementById("phone");
+var address = document.getElementById("address");
+var city = document.getElementById("city");
 var state = document.getElementById("state").selectedIndex;
-var zipCode = document.getElementById("zipCode").value;
-var ccNumber = document.getElementById("ccNumber").value;
-var ccExp = document.getElementById("ccExp").value;
-var ccCode = document.getElementById("ccCode").value;
+var zipCode = document.getElementById("zipCode");
+var ccNumber = document.getElementById("ccNumber");
+var ccExp = document.getElementById("ccExp");
+var ccCode = document.getElementById("ccCode");
 
-//get contact information from payment.html
-const getContactInfo = (e)=>{
-    e.preventDefault();
-    let info = {
-        firstName: document.getElementById("firstName").value,
-        lastName: document.getElementById("lastName").value,
-        email: document.getElementById("email").value,
-        phone: document.getElementById("phone").value,
-        address: document.getElementById("address").value,
-        city: document.getElementById("city").value,
-        zipcode: document.getElementById("zipCode").value,
-        // state: document.getElementById("state").selectedIndex,
-        ccNumber: document.getElementById("ccNumber").value,
-        ccExp: document.getElementById("ccExp").value,
-        ccCode: document.getElementById("ccCode").value
-    }
+//**CONFIRMATION MODAL ELEMENTS**
+var modalName = document.getElementById("modal-name");
+var modalEmail = document.getElementById("modal-email");
+var modalAddress = document.getElementById("modal-address");
+var modalCity= document.getElementById("modal-city");
+var modalPhone = document.getElementById("modal-phone");
+var modalState = document.getElementById("modal-state");
+var modalTotal = document.getElementById("modal-total");
 
-    contactInfo.push(info);
+let stateValue = document.getElementsByTagName("option")[state].text;
 
-    if(isContactFormValid(info)){
-        displayModal();
+//**PULLS STORED SESSION DATA FROM DESTINATION.JS**
+let tripName = sessionStorage.getItem('place');
+let tripCost = sessionStorage.getItem('total');
+
+//validates payment form fields and displays modal if "true"
+const executePaymentForm = ()=>{
+    if(isPaymentFormValid()){
+        postModalValues();
+        displayConfirmationModal();
     }
 }
 
-//posts all gathered data to modal for trip confirmation
-let tripName = sessionStorage.getItem('place');
-let tripCost = sessionStorage.getItem('total');
-const postModal = () =>{
+document.addEventListener('DOMContentLoaded', ()=>{
+    document.getElementById('sub-btn').addEventListener('click', executePaymentForm); 
+})
 
-    document.getElementById("modal-name").innerHTML= `${contactInfo[0].firstName} ${contactInfo[0].lastName}`;
-    document.getElementById("modal-email").innerHTML= `${contactInfo[0].email}`;
-    document.getElementById("modal-address").innerHTML= `${contactInfo[0].address}`;
-    document.getElementById("modal-city").innerHTML= `${contactInfo[0].city}`;
-    document.getElementById("modal-phone").innerHTML= `${contactInfo[0].phone}`;
-    document.getElementById("modal-state").innerHTML= `${document.getElementsByTagName("option")[state].text}`;
-    document.getElementById("modal-total").innerHTML= `${tripCost}`;
+//**PAYMENT FORM FUNCTIONS**
+
+//Inserts payment form values into confirmation modal
+const postModalValues = () =>{
+
+    modalName.innerHTML = `${firstName.value} ${lastName.value}`;
+    modalEmail.innerHTML = `${email.value}`;
+    modalAddress.innerHTML = `${address.value}`;
+    modalCity.innerHTML = `${city.value}`;
+    modalPhone.innerHTML = `${phone.value}`;
+    modalState.innerHTML = `${stateValue}`;
+    modalTotal.innerHTML = `${tripCost}`;
 
     switch(tripName){
         case "MARS":
@@ -62,52 +63,47 @@ const postModal = () =>{
     }
 }
 
-document.addEventListener('DOMContentLoaded', ()=>{
-    document.getElementById('sub-btn').addEventListener('click', getContactInfo);
-    document.getElementById('sub-btn').addEventListener('click', postModal);
-})
-
-
-
-function displayModal(){
+//changes modal display style from "hidden"
+function displayConfirmationModal(){
     document.getElementById('payModal').style.display = "block";
 }
 
-function isContactFormValid(contactFormInfo){
+//validates payment form values
+function isPaymentFormValid(){
 
-    if(contactFormInfo.firstName == "" || contactFormInfo.lastName == ""){
-        alert("First/Last Name Required");
-        return false;
-    }
-    if(contactFormInfo.email == ""){
-        alert("Email Required");
-        return false;
-    }
-    if(contactFormInfo.phone == "" || contactFormInfo.phone.length !== 10){
-        alert("Phone invalid. 10 digits no spaces, dashes, or ()");
-        return false;
-    }
-    if(contactFormInfo.address == ""){
-        alert("Address Required");
-        return false;
-    }
-    if(contactFormInfo.city == ""){
-        alert("City Required");
-        return false;
-    }
-    if(contactFormInfo.zipcode == "" || contactFormInfo.zipcode.length !== 5){
-        alert("Zipcode Invalid. Must be 5 digits.");
-        return false;
-    }
-    if(contactFormInfo.ccNumber == "" || contactFormInfo.ccNumber !== "1234123412341234"){
-        alert("Credit Card Number Invalid");
-        return false;
-    }
-    if(contactFormInfo.ccExp == "" || contactFormInfo.ccExp !== "0977"){
-        alert("Invalid Credit Card Expiration");
-        return false;
-    }
-    if(contactFormInfo.ccCode == "" || contactFormInfo.ccCode !== "000"){
+    // if(firstName.value == "" || lastName.value == ""){
+    //     alert("First/Last Name Required");
+    //     return false;
+    // }
+    // if(email.value == ""){
+    //     alert("Email Required");
+    //     return false;
+    // }
+    // if(address.value == ""){
+    //     alert("Address Required");
+    //     return false;
+    // }
+    // if(phone.value == "" || phone.value.length !== 10){
+    //     alert("Phone invalid. 10 digits no spaces, dashes, or ()");
+    //     return false;
+    // }
+    // if(zipCode.value == "" || zipCode.value.length !== 5){
+    //     alert("Zipcode Invalid. Must be 5 digits.");
+    //     return false;
+    // }
+    // if(city.value == ""){
+    //     alert("City Required");
+    //     return false;
+    // }
+    // if(ccNumber.value == "" || ccNumber.value !== "1234123412341234"){
+    //     alert("Credit Card Number Invalid");
+    //     return false;
+    // }
+    // if(ccExp.value == "" || ccExp.value !== "0977"){
+    //     alert("Invalid Credit Card Expiration");
+    //     return false;
+    // }
+    if(ccCode.value == "" || ccCode.value !== "000"){   
         alert("Invalid Credit Card Security Code");
     }else{
         alert("Payment Successful!");
