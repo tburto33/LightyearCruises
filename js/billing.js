@@ -22,9 +22,12 @@ var confirmationModalState = document.getElementById("modal-state");
 var confirmationModalTotal = document.getElementById("modal-total");
 var confirmationModal = document.getElementById("payModal");
 
-//**PULLS STORED SESSION DATA FROM DESTINATION.JS**
+//**STORED SESSION DATA FROM DESTINATION.JS**
 let tripName = sessionStorage.getItem('place');
 let tripCost = sessionStorage.getItem('total');
+
+//**VALIDATION VARS**
+var emailFilter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
 //validates payment form fields and displays modal if "true"
 const executePaymentForm = ()=>{
@@ -73,8 +76,9 @@ function isPaymentFormValid(){
         alert("First/Last Name Required");
         return false;
     }
-    if(email.value == ""){
-        alert("Email Required");
+    if(email.value == "" || !emailFilter.test(email.value) ){
+        alert("Please Provide Valid Email");
+        email.focus;
         return false;
     }
     if(address.value == ""){
@@ -82,7 +86,7 @@ function isPaymentFormValid(){
         return false;
     }
     if(phone.value == "" || phone.value.length !== 10){
-        alert("Phone invalid. 10 digits no spaces, dashes, or ()");
+        alert("Phone invalid. 10 digits no spaces");
         return false;
     }
     if(zipCode.value == "" || zipCode.value.length !== 5){
