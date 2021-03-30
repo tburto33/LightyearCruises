@@ -1,0 +1,223 @@
+/* FONT STYLES */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+/* ID'S */
+#body-style {
+    font-size: 2vw;
+    font-family: 'Orbitron', Arial, Helvetica, sans-serif;
+}
+
+#footer {
+    margin-top: 10px;
+    font-size: smaller;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#can-item {
+    color: black;
+    background-color: whitesmoke;
+}
+
+/* BASE STYLES */
+
+h2 {
+    font-weight: bold;
+}
+
+/* IMAGE STYLES */
+
+.main-banner {
+    padding-top: 30px;
+}
+
+.spaceship {
+    height: auto;
+    width: 1200px;
+}
+
+.main-banner,
+.cruise-one,
+.cruise-two,
+.cruise-three {
+    position: relative;
+}
+
+.banner-heading {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    text-align: left;
+}
+
+.banner-slogan {
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
+    text-align: right;
+}
+
+.cancel-img,
+.money-img,
+.credit-img {
+    height: 50px;
+    width: auto;
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+.carousel-text{
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+    text-align: left;
+}
+
+.carousel-text h6 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.book-btn {
+    color: black;
+    background-color: silver;
+}
+
+.dest-btn {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    text-align: center;
+}
+
+.main-body {
+    background-image: url("../img/stars.png");
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+}
+
+.cancel-container,
+.vessel {
+    margin-top: 20px;
+    color: black;
+}
+
+.cancel-container {
+    margin: 0 auto;
+    padding: 0 30px;
+
+}
+
+.cancel-item,
+.money-item {
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    padding-bottom: 5px;
+    width: 33%;
+}
+
+.cancel-item {
+    margin-right: 3px;
+}
+
+/* STYLES */
+
+.footer-copyright {
+    text-align: center;
+}
+
+.container {
+    text-align: center;
+    background-color: black;
+    color: whitesmoke;
+}
+
+.equal {
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+}
+
+.banner-heading,
+.banner-slogan {
+    text-shadow: 4px 4px 4px #aaa;
+}
+
+.fa {
+  padding: 10px;
+  font-size: 20px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin: 0 2px;
+}
+
+/** MEDIA QUERIES **/
+@media only screen and (max-width: 1000px){
+    .fa {
+        width: 20px;
+    }
+}
+
+@media only screen and (min-width: 780px){
+    #dest-carousel{
+        width: 750px;
+        margin: auto;
+    }
+
+    .banner-heading,
+    .banner-slogan {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 780px){
+    .navbar-brand {
+        display: none;
+    }
+
+    .cancel-container {
+        margin: 20px 10%
+    }
+}
+
+@media only screen and (max-width: 760px){
+    .cancel-item,
+    .money-item {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .main-banner{
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (min-width: 500px){
+    .banner-heading {
+        top: 32px;
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .main-banner {
+        margin-top: 40px;
+    }
+}
+
+@media screen and (min-width: 50em) {
+    #body-style {
+        font-size: 1vw;
+    }
+}
+
+@media screen and (min-width: 75em) {
+    #body-style {
+        font-size: 1.5em;
+    }
+}

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!--Icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<!-- MAIN CSS -->
+<link rel="stylesheet" href="css/main.css">
+    <title>Lightyear Cruises</title>
+</head>
+<body class="main-body" id="body-style">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img class="navbar-left" src="img/spaceship_logo.png" alt="logo" style="width:80px;">
+                <a class="navbar-brand" href="#" style="color:white;">Lightyear Cruises</a>
+            </div>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Destinations</a></li>
+                    <li><a href="#">Packages</a></li>
+                    <li><a href="#">Starship</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div> 
+        </div>
+    </nav>
+    <a id="top"></a>
+    <div class="container main-banner">   
+        <div class="row">
+            <div class="col-xs">
+                <img class="img-responsive" src="img/spacestation.jpg" alt="spacestation">
+                <div class="banner-heading">
+                    <h1>LIGHTYEAR CRUISES</h1>
+                </div>
+                <div class="banner-slogan">
+                    <h3>OUT OF THIS WORLD VACATIONS</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs ">
+                <h2>Step Aboard</h2>
+                <p>
+                    Your cruise starts by boarding a small shuttle that launches you into Earth's orbit
+                    to the Lightyear Space Station and Resort. Here you can relax in five-star accomadations,
+                    check out our observation station, and more as you prepare to board your starship.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- **DESTINATIONS CAROUSEL** -->
+    <div class="container">
+        <h2>Destinations</h2>
+        <div id="dest-carousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#dest-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#dest-carousel" data-slide-to="1"></li>
+                <li data-target="#dest-carousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="img/mars.jpg" alt="mars">
+                    <div class="carousel-caption carousel-text">
+                        <h6>1 MONTH</h6>
+                        <h4>RED SANDS OF MARS</h4>
+                        <h5>STARTING:</h5>
+                        <h6>$400/DAY</h6>
+                    </div>
+                    <div class="carousel-caption">
+                        <form action="destform.html">
+                            <input type="submit" value="Book Now" class="book-btn">
+                        </form>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="img/jupiter.jpg" alt="jupiter">
+                    <div class="carousel-caption carousel-text">
+                        <h6>1 MONTH</h6>
+                        <h4>EYE OF JUPITER</h4>
+                        <h5>STARTING:</h5>
+                        <h6>$600/DAY</h6>
+                    </div>
+                    <div class="carousel-caption">
+                        <form action="destform.html">
+                            <input type="submit" value="Book Now" class="book-btn">
+                        </form>
+                    </div>
+                </div>
+            
+                <div class="item">
+                    <img src="img/saturn.jpg" alt="saturn">
+                    <div class="carousel-caption carousel-text">
+                        <h6>3 MONTH</h6>
+                        <h4>RINGS OF SATURN</h4>
+                        <h5>STARTING:</h5>
+                        <h6>$800/DAY</h6>
+                    </div>
+                    <div class="carousel-caption">
+                        <form action="destform.html">
+                            <input type="submit" value="Book Now" class="book-btn" style="color:black">
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <a class="left carousel-control" href="#dest-carousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="right carousel-control" href="#dest-carousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+              </a>
+        </div>    
+    </div>
+    <!-- **CANCELLATION CONTAINER** -->
+    <div class="container cancel-container">
+        <div class="row equal">
+            <div class="col-sm-4 cancel-item">
+                <img class= "cancel-img" src="img/cancelled.png" alt="cancel stamp">
+                <h3>Free Cancellations</h3>
+                <p>
+                    Cancel anytime within 48 hours of flight date and you will receive
+                    a flight credit towards another trip.
+                </p>
+            </div>
+            <div class="col-sm-4 cancel-item">
+                <img class= "credit-img" src="img/rocket_logo.png" alt="rocket">
+                <h3>Earn Flight Points</h3>
+                <p>
+                    Every trip and purhase on board the Starship earns you flight points.
+                    Redeem them for free on-board items or towards future trips.
+                </p>
+            </div>
+            <div class="col-sm-4 money-item">
+                <img class="money-img" src="img/money.jpg" alt="money pile">
+                <h3>Financing Available</h3>
+                <p>
+                    We at Lightyear Liners feel like these amazing cruises should be available
+                    for all. For that purpose we offer various easily affordable, low interest financing
+                    options.
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- **VESSEL CONTAINER** -->
+    <div class="container vessel" >
+        <div class="row">
+            <div class="col-sm">
+                <h2>Your Vessel</h2>
+                <img class="img-responsive spaceship" src="img/orca_elite_dangerous.webp" alt="spaceship">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna 
+                    aliqua. Sodales ut eu sem integer vitae justo. 
+                    Arcu felis bibendum ut tristique et. Ullamcorper eget nulla 
+                    facilisi etiam dignissim diam quis enim. Fames ac turpis egestas
+                    maecenas pharetra convallis. In est ante in nibh mauris cursus mattis molestie.
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- **FOOTER** -->
+    <div class="container" id="footer">
+        <div class="row">
+            <div class="col-xs-4">
+                <p class="footer-copyright">&copy; 2077 Lightyear Liners Intergalactic</p>
+            </div>
+            <div class="col-xs-4">
+                <a href="#top">Back to Top</a>
+            </div>
+            <div class="col-xs-4">
+                <a class="fa fa-facebook-official"></a>
+                <a class="fa fa-twitter-square"></a>
+                <a class="fa fa-instagram"></a>
+                <a class="fa fa-youtube-square"></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
